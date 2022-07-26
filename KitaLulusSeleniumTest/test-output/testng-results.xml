@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'width=100 height=100/></a>]]>
+    </line>
+    <line>
+      <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'width=100 height=100/></a>]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5632" started-at="2022-07-26T23:56:17 ICT" finished-at="2022-07-26T23:56:23 ICT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5632" started-at="2022-07-26T23:56:17 ICT" finished-at="2022-07-26T23:56:23 ICT">
+      <class name="com.kitalulus.searchVacancy">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.searchVacancy@30b8a058]" name="setupDriver" is-config="true" duration-ms="3728" started-at="2022-07-26T23:56:13 ICT" finished-at="2022-07-26T23:56:17 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method status="PASS" signature="openAppTest()[pri:0, instance:com.kitalulus.searchVacancy@30b8a058]" name="openAppTest" duration-ms="3387" started-at="2022-07-26T23:56:17 ICT" description="Test date 26-July-22" finished-at="2022-07-26T23:56:21 ICT">
+          <reporter-output>
+            <line>
+              <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'width=100 height=100/></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAppTest -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.kitalulus.searchVacancy@30b8a058]" name="closeDriver" is-config="true" duration-ms="464" started-at="2022-07-26T23:56:27 ICT" finished-at="2022-07-26T23:56:27 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.kitalulus.searchVacancy -->
+      <class name="com.kitalulus.openApp">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.openApp@7494e528]" name="setupDriver" is-config="true" duration-ms="3946" started-at="2022-07-26T23:56:09 ICT" finished-at="2022-07-26T23:56:13 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method status="PASS" signature="openAppTest()[pri:0, instance:com.kitalulus.openApp@7494e528]" name="openAppTest" duration-ms="2146" started-at="2022-07-26T23:56:21 ICT" description="Test date 26-July-22" finished-at="2022-07-26T23:56:23 ICT">
+          <reporter-output>
+            <line>
+              <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'width=100 height=100/></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAppTest -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.kitalulus.openApp@7494e528]" name="closeDriver" is-config="true" duration-ms="4158" started-at="2022-07-26T23:56:23 ICT" finished-at="2022-07-26T23:56:27 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.kitalulus.openApp -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

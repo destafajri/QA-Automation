@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\kitaLulus\test-output\openApp.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\kitaLulus\test-output\openApp.png'width=100 height=100/></a>]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="359" started-at="2022-07-26T23:59:36 ICT" finished-at="2022-07-26T23:59:36 ICT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="359" started-at="2022-07-26T23:59:36 ICT" finished-at="2022-07-26T23:59:36 ICT">
+      <class name="com.kitalulus.openApp">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.openApp@68bbe345]" name="setupDriver" is-config="true" duration-ms="3959" started-at="2022-07-26T23:59:32 ICT" finished-at="2022-07-26T23:59:36 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method status="PASS" signature="openAppTest()[pri:0, instance:com.kitalulus.openApp@68bbe345]" name="openAppTest" duration-ms="310" started-at="2022-07-26T23:59:36 ICT" description="Test date 26-July-22" finished-at="2022-07-26T23:59:36 ICT">
+          <reporter-output>
+            <line>
+              <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\kitaLulus\test-output\openApp.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\kitaLulus\test-output\openApp.png'width=100 height=100/></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAppTest -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.kitalulus.openApp@68bbe345]" name="closeDriver" is-config="true" duration-ms="4218" started-at="2022-07-26T23:59:36 ICT" finished-at="2022-07-26T23:59:40 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.kitalulus.openApp -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
