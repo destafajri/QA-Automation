@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.kitalulus.searchVacancy">
+      <class name="com.kitalulus.bookmarkLove">
         <methods>
-          <include name="openAppTest"/>
+          <include name="bookmarkTest"/>
           <include name="closeDriver"/>
           <include name="setupDriver"/>
         </methods>
-      </class> <!-- com.kitalulus.searchVacancy -->
+      </class> <!-- com.kitalulus.bookmarkLove -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
