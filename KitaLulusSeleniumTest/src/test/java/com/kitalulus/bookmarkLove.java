@@ -134,7 +134,7 @@ public class bookmarkLove {
 		state = true;
 		while (state) {
 			try {
-				WebElement bookmark = driver.findElement(By.xpath("//img[@alt='bookmark active']"));
+				WebElement bookmark = driver.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']/img[@alt='bookmark active']"));
 				Assert.assertEquals(bookmark, true);
 
 				state = false;
