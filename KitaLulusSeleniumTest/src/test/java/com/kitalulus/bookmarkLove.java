@@ -15,66 +15,29 @@ import org.testng.annotations.Test;
 public class bookmarkLove {
 	WebDriver driver;
 	String baseURL = "https://kerja.kitalulus.com/id";
-	Scanner input = new Scanner(System.in);
+	Scanner input;
 	String inputEmail;
 	String inputPass;
-	
 
 	@BeforeSuite
 	public void setupDriver() {
+		System.out.println("Please fill your email and pass");
+		this.input = new Scanner(System.in);
+		this.inputEmail = input.nextLine();
+		this.inputPass = input.nextLine();
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
 
 		this.driver = new ChromeDriver();
 		driver.get(this.baseURL);
-		System.out.print("Please fill your email and pass");
-		this.inputEmail = input.nextLine();
-		this.inputPass = input.nextLine();
+
 
 	}
 
 	@Test(description = "Test date 26-July-22")
 	public void bookmarkTest() {
-		// login
-		WebElement acount = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/nav/div/a[4]/button"));
-		acount.click();
 
-		Boolean state = true;
-		while (state) {
-			try {
-				WebElement login = driver.findElement(By.xpath("//button[@type='button']"));
-				login.click();
-
-				state = false;
-			} catch (Exception e) {
-				System.out.print(e);
-			}
-		}
-
-		state = true;
-		while (state) {
-			try {
-				WebElement email = driver.findElement(By.xpath("//input[@id='identifierId']"));
-				email.sendKeys(this.inputEmail);
-				email.sendKeys(Keys.ENTER);
-
-				state = false;
-			} catch (Exception e) {
-				System.out.print(e);
-			}
-		}
-
-		state = true;
-		while (state) {
-			try {
-				WebElement pass = driver.findElement(By.xpath("//input[@name='password']"));
-				pass.sendKeys(this.inputPass);
-				pass.sendKeys(Keys.ENTER);
-
-				state = false;
-			} catch (Exception e) {
-				System.out.print(e);
-			}
-		}
+		//Find Job
 
 		this.driver.navigate();
 
@@ -83,7 +46,7 @@ public class bookmarkLove {
 		search.sendKeys(Keys.ENTER);
 
 		// click job
-		state = true;
+		Boolean state = true;
 		while (state) {
 			try {
 				WebElement job = driver
@@ -98,7 +61,8 @@ public class bookmarkLove {
 		state = true;
 		while (state) {
 			try {
-				WebElement loveBookmark = driver.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']"));
+				WebElement loveBookmark = driver
+						.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']"));
 				loveBookmark.click();
 
 				state = false;
@@ -106,6 +70,66 @@ public class bookmarkLove {
 			}
 		}
 		
+		// login
+				try {
+					WebElement acount = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/nav/div/a[4]/button"));
+					acount.click();
+				} catch (Exception e) {
+					System.out.print(e);
+				}
+		
+				state = true;
+				while (state) {
+					try {
+						WebElement login = driver.findElement(By.xpath("//button[@type='button']"));
+						login.click();
+		
+						state = false;
+					} catch (Exception e) {
+						System.out.print(e);
+					}
+				}
+		
+				state = true;
+				while (state) {
+					try {
+						WebElement email = driver.findElement(By.xpath("//input[@id='identifierId']"));
+						email.sendKeys(this.inputEmail);
+						email.sendKeys(Keys.ENTER);
+		
+						state = false;
+					} catch (Exception e) {
+						System.out.print(e);
+					}
+				}
+		
+				state = true;
+				while (state) {
+					try {
+						WebElement pass = driver.findElement(By.xpath("//input[@name='password']"));
+						pass.sendKeys(this.inputPass);
+						pass.sendKeys(Keys.ENTER);
+		
+						state = false;
+					} catch (Exception e) {
+						System.out.print(e);
+					}
+				}
+		
+				
+		// click bookmark
+		state = true;
+		while (state) {
+			try {
+				WebElement loveBookmark = driver
+						.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']"));
+				loveBookmark.click();
+
+				state = false;
+			} catch (Exception e) {
+			}
+		}		
+
 		// Assert bookmark
 		state = true;
 		while (state) {
@@ -122,7 +146,7 @@ public class bookmarkLove {
 
 	@AfterSuite
 	public void closeDriver() {
-//		this.driver.close();
+		this.driver.close();
 
 	}
 
