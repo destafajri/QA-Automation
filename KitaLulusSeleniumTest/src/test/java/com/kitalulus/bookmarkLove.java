@@ -24,9 +24,9 @@ public class bookmarkLove {
 	WebElement bookmark;
 
 	// Type it first on your terminal
-	// C:\Program Files (x86)\Google\Chrome\Application>chrome.exe
-	// --remote-debugging-port=9222 --user-data-dir=C:\chromeData
-
+	//	cd C:\Program Files (x86)\Google\Chrome\Application
+	// >chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chromeData
+	
 	public static File ambilGambar(WebDriver webdriver, String filePath) throws IOException {
 		TakesScreenshot screenShoot = ((TakesScreenshot) webdriver);
 		File srcFile = screenShoot.getScreenshotAs(OutputType.FILE);
