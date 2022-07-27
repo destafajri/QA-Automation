@@ -88,6 +88,12 @@ public class bookmarkLove {
 		try {
 			System.out.println("here's" + bookmark + " iya disini xpathnya");
 			Assert.assertNotNull(bookmark.isDisplayed());
+
+			//repeat click for next test
+			WebElement loveBookmark = driver
+					.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']"));
+			loveBookmark.click();
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}

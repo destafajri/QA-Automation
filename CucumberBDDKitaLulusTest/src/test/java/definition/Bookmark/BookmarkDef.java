@@ -17,8 +17,8 @@ public class BookmarkDef {
 	String baseURL;
 	WebElement bookmark;
 	// Type it first on your terminal
-	// C:\Program Files (x86)\Google\Chrome\Application>chrome.exe
-	// --remote-debugging-port=9222 --user-data-dir=C:\chromeData
+	//	cd C:\Program Files (x86)\Google\Chrome\Application
+	// >chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chromeData
 
 	@Given("User on the browser {string}")
 	public void user_on_the_browser(String string) {
@@ -98,6 +98,13 @@ public class BookmarkDef {
 		try {
 			System.out.println("here's" + bookmark + " iya disini xpathnya");
 			Assert.assertNotNull(bookmark.isDisplayed());
+			
+			//repeat click for next test
+			WebElement loveBookmark = driver
+					.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']"));
+			loveBookmark.click();
+			driver.close();
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
