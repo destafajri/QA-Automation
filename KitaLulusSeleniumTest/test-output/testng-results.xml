@@ -1,121 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
+    <line>
+      <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'width=100 height=100/></a>]]>
+    </line>
+    <line>
+      <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\bookmark.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\bookmark.png'width=100 height=100/></a>]]>
+    </line>
+    <line>
+      <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'width=100 height=100/></a>]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="41379" started-at="2022-07-27T01:58:55 ICT" finished-at="2022-07-27T01:59:36 ICT">
+  <suite name="Default suite" duration-ms="3368" started-at="2022-07-27T12:58:27 ICT" finished-at="2022-07-27T12:58:30 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="41379" started-at="2022-07-27T01:58:55 ICT" finished-at="2022-07-27T01:59:36 ICT">
-      <class name="com.kitalulus.bookmarkLove">
-        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.bookmarkLove@68bbe345]" name="setupDriver" is-config="true" duration-ms="22916" started-at="2022-07-27T01:58:32 ICT" finished-at="2022-07-27T01:58:55 ICT">
+    <test name="Default test" duration-ms="3368" started-at="2022-07-27T12:58:27 ICT" finished-at="2022-07-27T12:58:30 ICT">
+      <class name="com.kitalulus.searchVacancy">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.searchVacancy@7494e528]" name="setupDriver" is-config="true" duration-ms="4824" started-at="2022-07-27T12:58:22 ICT" finished-at="2022-07-27T12:58:27 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method status="FAIL" signature="bookmarkTest()[pri:0, instance:com.kitalulus.bookmarkLove@68bbe345]" name="bookmarkTest" duration-ms="41283" started-at="2022-07-27T01:58:55 ICT" description="Test date 26-July-22" finished-at="2022-07-27T01:59:36 ICT">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [null]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [null]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.failNotEquals(Assert.java:969)
-at org.testng.Assert.assertEqualsImpl(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:563)
-at com.kitalulus.bookmarkLove.bookmarkTest(bookmarkLove.java:124)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:766)
-at org.testng.TestRunner.run(TestRunner.java:587)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-at org.testng.TestNG.runSuites(TestNG.java:1039)
-at org.testng.TestNG.run(TestNG.java:1007)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method status="PASS" signature="openAppTest()[pri:0, instance:com.kitalulus.searchVacancy@7494e528]" name="openAppTest" duration-ms="2577" started-at="2022-07-27T12:58:27 ICT" description="Test date 26-July-22" finished-at="2022-07-27T12:58:30 ICT">
+          <reporter-output>
+            <line>
+              <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\searchVacancy.png'width=100 height=100/></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAppTest -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.kitalulus.searchVacancy@7494e528]" name="closeDriver" is-config="true" duration-ms="4271" started-at="2022-07-27T12:58:35 ICT" finished-at="2022-07-27T12:58:40 ICT">
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.kitalulus.searchVacancy -->
+      <class name="com.kitalulus.bookmarkLove">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.bookmarkLove@4bbfb90a]" name="setupDriver" is-config="true" duration-ms="6174" started-at="2022-07-27T12:58:13 ICT" finished-at="2022-07-27T12:58:19 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method status="PASS" signature="bookmarkTest()[pri:0, instance:com.kitalulus.bookmarkLove@4bbfb90a]" name="bookmarkTest" duration-ms="398" started-at="2022-07-27T12:58:30 ICT" description="Test date 26-July-22" finished-at="2022-07-27T12:58:30 ICT">
+          <reporter-output>
+            <line>
+              <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\bookmark.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\bookmark.png'width=100 height=100/></a>]]>
+            </line>
+          </reporter-output>
         </test-method> <!-- bookmarkTest -->
-        <test-method status="FAIL" signature="closeDriver()[pri:0, instance:com.kitalulus.bookmarkLove@68bbe345]" name="closeDriver" is-config="true" duration-ms="4309" started-at="2022-07-27T01:59:36 ICT" finished-at="2022-07-27T01:59:41 ICT">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[chrome not reachable
-  (Session info: chrome=103.0.5060.134)
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESTA', ip: '192.168.18.8', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ASUS\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50228}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 063cb7a504918c37b957264b34b34fb4]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=103.0.5060.134)
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'DESTA', ip: '192.168.18.8', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_333'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ASUS\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:50228}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 063cb7a504918c37b957264b34b34fb4
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:438)
-at com.kitalulus.bookmarkLove.closeDriver(bookmarkLove.java:135)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:351)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-at org.testng.TestNG.runSuites(TestNG.java:1039)
-at org.testng.TestNG.run(TestNG.java:1007)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.kitalulus.bookmarkLove@4bbfb90a]" name="closeDriver" is-config="true" duration-ms="0" started-at="2022-07-27T12:58:30 ICT" finished-at="2022-07-27T12:58:30 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
       </class> <!-- com.kitalulus.bookmarkLove -->
+      <class name="com.kitalulus.openApp">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:com.kitalulus.openApp@7c29daf3]" name="setupDriver" is-config="true" duration-ms="3478" started-at="2022-07-27T12:58:19 ICT" finished-at="2022-07-27T12:58:22 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method status="PASS" signature="openAppTest()[pri:0, instance:com.kitalulus.openApp@7c29daf3]" name="openAppTest" duration-ms="316" started-at="2022-07-27T12:58:30 ICT" description="Test date 26-July-22" finished-at="2022-07-27T12:58:30 ICT">
+          <reporter-output>
+            <line>
+              <![CDATA[<a target='_blank' href=' C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'>'<img src='C:\Users\ASUS\Desktop\Quality Assurance\SQA Project\KitaLulusSeleniumTest\test-output\openApp.png'width=100 height=100/></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- openAppTest -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.kitalulus.openApp@7c29daf3]" name="closeDriver" is-config="true" duration-ms="4845" started-at="2022-07-27T12:58:30 ICT" finished-at="2022-07-27T12:58:35 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.kitalulus.openApp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

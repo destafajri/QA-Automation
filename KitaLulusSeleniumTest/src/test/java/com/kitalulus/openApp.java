@@ -50,6 +50,7 @@ public class openApp {
 		System.out.println(this.driver.getTitle());
 		Assert.assertEquals(this.driver.getTitle(), "Info Lowongan Kerja Terbaru 2022 - Kitalulus");
 		
+		//ScreenShoot code
 		Boolean state =true;
 		while(state){
 		try{

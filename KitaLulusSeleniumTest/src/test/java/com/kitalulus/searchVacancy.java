@@ -62,7 +62,8 @@ public class searchVacancy {
 			} catch (Exception e) {
 			}
 		}
-
+		
+		//Screenshoot code
 		state = true;
 		while (state) {
 			try {

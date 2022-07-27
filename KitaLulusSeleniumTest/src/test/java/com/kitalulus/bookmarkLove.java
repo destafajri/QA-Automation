@@ -1,13 +1,19 @@
 package com.kitalulus;
 
-import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -15,35 +21,53 @@ import org.testng.annotations.Test;
 public class bookmarkLove {
 	WebDriver driver;
 	String baseURL = "https://kerja.kitalulus.com/id";
-	Scanner input;
-	String inputEmail;
-	String inputPass;
+	WebElement bookmark;
+
+	// Type it first on your terminal
+	// C:\Program Files (x86)\Google\Chrome\Application>chrome.exe
+	// --remote-debugging-port=9222 --user-data-dir=C:\chromeData
+
+	public static File ambilGambar(WebDriver webdriver, String filePath) throws IOException {
+		TakesScreenshot screenShoot = ((TakesScreenshot) webdriver);
+		File srcFile = screenShoot.getScreenshotAs(OutputType.FILE);
+		File destinationFile = new File(filePath);
+
+		// copy file at destination
+		FileUtils.copyFile(srcFile, destinationFile);
+
+		return destinationFile;
+	}
 
 	@BeforeSuite
 	public void setupDriver() {
-		System.out.println("Please fill your email and pass");
-		this.input = new Scanner(System.in);
-		this.inputEmail = input.nextLine();
-		this.inputPass = input.nextLine();
-		
+
+		// set the driver path- You can also use WebDriverManager for drivers
 		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
 
-		this.driver = new ChromeDriver();
-		driver.get(this.baseURL);
+		// Create object of ChromeOptions Class
+		ChromeOptions opt = new ChromeOptions();
 
+		// pass the debuggerAddress and pass the port along with host. Since I am
+		// running test on local so using localhost
+		opt.setExperimentalOption("debuggerAddress", "localhost:9222 ");
 
-	}
+		// pass ChromeOptions object to ChromeDriver constructor
+		this.driver = new ChromeDriver(opt);
 
-	@Test(description = "Test date 26-July-22")
-	public void bookmarkTest() {
+		// now you can use now existing Browser
+		driver.get(baseURL);
 
-		//Find Job
+		// Find Job
+		try {
 
-		this.driver.navigate();
+			WebElement search = driver
+					.findElement(By.xpath("//input[@placeholder='Cari posisi dan perusahaan impianmu']"));
+			search.sendKeys("QA Automation");
+			search.sendKeys(Keys.ENTER);
 
-		WebElement search = driver.findElement(By.xpath("//input[@placeholder='Cari posisi dan perusahaan impianmu']"));
-		search.sendKeys("QA Automation");
-		search.sendKeys(Keys.ENTER);
+		} catch (Exception e) {
+
+		}
 
 		// click job
 		Boolean state = true;
@@ -69,76 +93,37 @@ public class bookmarkLove {
 			} catch (Exception e) {
 			}
 		}
-		
-		// login
-				try {
-					WebElement acount = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/nav/div/a[4]/button"));
-					acount.click();
-				} catch (Exception e) {
-					System.out.print(e);
-				}
-		
-				state = true;
-				while (state) {
-					try {
-						WebElement login = driver.findElement(By.xpath("//button[@type='button']"));
-						login.click();
-		
-						state = false;
-					} catch (Exception e) {
-						System.out.print(e);
-					}
-				}
-		
-				state = true;
-				while (state) {
-					try {
-						WebElement email = driver.findElement(By.xpath("//input[@id='identifierId']"));
-						email.sendKeys(this.inputEmail);
-						email.sendKeys(Keys.ENTER);
-		
-						state = false;
-					} catch (Exception e) {
-						System.out.print(e);
-					}
-				}
-		
-				state = true;
-				while (state) {
-					try {
-						WebElement pass = driver.findElement(By.xpath("//input[@name='password']"));
-						pass.sendKeys(this.inputPass);
-						pass.sendKeys(Keys.ENTER);
-		
-						state = false;
-					} catch (Exception e) {
-						System.out.print(e);
-					}
-				}
-		
-				
-		// click bookmark
-		state = true;
-		while (state) {
-			try {
-				WebElement loveBookmark = driver
-						.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']"));
-				loveBookmark.click();
 
-				state = false;
-			} catch (Exception e) {
-			}
-		}		
+		// return value for assertion
+		this.bookmark = driver.findElement(By.xpath("//img[@alt='bookmark active']"));
+
+	}
+
+	@Test(description = "Test date 26-July-22")
+	public void bookmarkTest() {
 
 		// Assert bookmark
-		state = true;
+		try {
+			System.out.println("here's" + bookmark + " iya disini xpathnya");
+			Assert.assertNotNull(bookmark.isDisplayed());
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		// ScreenShoot code
+		Boolean state = true;
 		while (state) {
 			try {
-				WebElement bookmark = driver.findElement(By.xpath("//button[@class='BookmarkButton___StyledButton-sc-10f0at4-1 cpgooR']/img[@alt='bookmark active']"));
-				Assert.assertEquals(bookmark, true);
+				// file path
+				String akhirFile = System.getProperty("user.dir") + "\\test-output\\bookmark.png";
+				File destinationFile = openApp.ambilGambar(driver, akhirFile);
 
+				// report code
+				Reporter.log("<a target='_blank' href=' " + destinationFile.getAbsolutePath() + "'>" + "'<img src='"
+						+ destinationFile.getAbsolutePath() + "'width=100 height=100/></a>");
 				state = false;
-			} catch (Exception e) {
+			} catch (IOException e) {
+				System.out.println("ada eror bang");
 			}
 		}
 
