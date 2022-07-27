@@ -38,10 +38,16 @@ public class SearchVacancyDef {
 
 	@Then("User get validate {string}")
 	public void user_get_validate(String string) {
-		try {
-			String result = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/div[3]/div[2]/p/strong[2]")).getText();
-			Assert.assertEquals(result.contains(string), true);
-		} catch (Exception e) {
+		Boolean state = true;
+		while (state) {
+			try {
+				String result = driver.findElement(By.xpath("//*[@id=\"app-layout\"]/div[3]/div[2]/p/strong[2]"))
+						.getText();
+				Assert.assertEquals(result.contains(string), true);
+				driver.close();
+				state = false;
+			} catch (Exception e) {
+			}
 		}
 	}
 
