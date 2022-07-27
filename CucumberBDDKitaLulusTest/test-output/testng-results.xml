@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5459" started-at="2022-07-27T22:03:52 ICT" finished-at="2022-07-27T22:03:58 ICT">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerSearchVacancy@6acdbdf5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Default test" duration-ms="5459" started-at="2022-07-27T22:03:52 ICT" finished-at="2022-07-27T22:03:58 ICT">
+      <class name="runner.RunnerSearchVacancy">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runner.RunnerSearchVacancy@6acdbdf5]" name="setUpClass" is-config="true" duration-ms="323" started-at="2022-07-27T22:03:52 ICT" finished-at="2022-07-27T22:03:53 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerSearchVacancy@6acdbdf5]" name="runScenario" duration-ms="4793" started-at="2022-07-27T22:03:53 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-07-27T22:03:58 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["search job vacancy"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search Vacancy Test"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runner.RunnerSearchVacancy@6acdbdf5]" name="tearDownClass" is-config="true" duration-ms="281" started-at="2022-07-27T22:03:58 ICT" finished-at="2022-07-27T22:03:58 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.RunnerSearchVacancy -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
