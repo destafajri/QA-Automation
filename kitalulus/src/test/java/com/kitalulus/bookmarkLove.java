@@ -18,8 +18,6 @@ public class bookmarkLove {
 	String baseURL = "https://kerja.kitalulus.com/id";
 	
 	//Type it on your terminal
-	//	C:\Program Files (x86)\Google\Chrome\Application>chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\webdriver\ChromeProfile"
-	//		OR	
 	//	C:\Program Files (x86)\Google\Chrome\Application>chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chromeData
 
 
@@ -36,22 +34,10 @@ public class bookmarkLove {
 		opt.setExperimentalOption("debuggerAddress","localhost:9222 ");
 
 		// pass ChromeOptions object to ChromeDriver constructor
-		WebDriver driver=new ChromeDriver(opt);
+		this.driver=new ChromeDriver(opt);
 
 		// now you can use now existing Browser
 		driver.get(baseURL);
-		
-//		try {
-//			System.setProperty("webdriver.chrome.driver","C:\\webdriver\\chromedriver.exe");
-//			ChromeOptions options = new ChromeOptions();
-//			options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
-//			WebDriver driver = new ChromeDriver(options);
-//			System.out.println(driver.getTitle());
-//			driver.get(baseURL);
-//
-//		}catch(Exception e) {
-//			System.out.println("eror"+e);
-//		}
 		
 		
 		//Find Job		
