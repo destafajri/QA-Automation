@@ -1,6 +1,6 @@
 Feature: OpenApp Test
 
-	Scenario: search job vacancy
+	Scenario: openApp 
 		Given User on the Browser
 		When User type url "https://kerja.kitalulus.com/id"
 		And User send the url to the browser
