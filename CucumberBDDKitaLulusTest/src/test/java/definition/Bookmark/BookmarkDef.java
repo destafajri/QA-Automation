@@ -18,7 +18,7 @@ public class BookmarkDef {
 	WebElement bookmark;
 	// Type it first on your terminal
 	//	cd C:\Program Files (x86)\Google\Chrome\Application
-	// >chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chromeData
+	// chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chromeData
 
 	@Given("User on the browser {string}")
 	public void user_on_the_browser(String string) {
