@@ -1,4 +1,4 @@
-Feature: Search Vacancy Test
+Feature: OpenApp Test
 
 	Scenario: search job vacancy
 		Given User on the Browser
