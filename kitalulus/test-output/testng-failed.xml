@@ -6,6 +6,7 @@
       <class name="com.kitalulus.bookmarkLove">
         <methods>
           <include name="bookmarkTest"/>
+          <include name="closeDriver"/>
           <include name="setupDriver"/>
         </methods>
       </class> <!-- com.kitalulus.bookmarkLove -->
