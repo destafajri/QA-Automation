@@ -6,8 +6,8 @@ How To Execute Selenium Scripts On Already Opened Browser
 Step 1- Start Chrome in debug mode
 
       Navigate to chrome directory using the cd command
-      cd C:\Program Files (x86)\Google\Chrome\Application
-    ==> In my case chrome.exe is under C:\Program Files (x86)\Google\Chrome\Application
+      n my case chrome.exe is under C:\Program Files (x86)\Google\Chrome\Application
+    ==> Icd C:\Program Files (x86)\Google\Chrome\Application
 
       Syntax
       chrome.exe –remote-debugging-port=any-free-port –user-data-dir=directory (path where you need to store data)
