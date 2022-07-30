@@ -22,7 +22,7 @@ public class openApp {
 		driver.get(this.baseURL);
 	}
 
-	@Test(description = "Test date 26-July-22")
+	@Test(description = "Test date 30-July-22")
 	public void openAppTest() {
 		System.out.println(this.driver.getTitle());
 		Assert.assertEquals(this.driver.getTitle(), "Situs Jual Beli Online Terlengkap, Mudah & Aman | Tokopedia");
