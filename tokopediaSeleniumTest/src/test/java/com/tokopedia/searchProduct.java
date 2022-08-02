@@ -43,7 +43,6 @@ public class searchProduct {
 			} catch (Exception e) {
 			}
 		}
-
 	}
 
 	@AfterSuite
