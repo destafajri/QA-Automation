@@ -14,8 +14,8 @@ public class UploadData {
 	WebDriver driver;
 	String baseURL = "https://sqa.peluangkerjaku.com/tele/";
 
-	@Given("User on the login page")
-	public void user_on_the_login_page() {
+	@Given("UserSpv on the login page")
+	public void UserSpv_on_the_login_page() {
 		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
 
 		this.driver = new ChromeDriver();
@@ -23,8 +23,8 @@ public class UploadData {
 
 	}
 
-	@When("User login with valid username {string} and password {string}")
-	public void user_login_with_valid_username_and_password(String string, String string2) {
+	@When("UserSpv login with valid UserSpvname {string} and password {string}")
+	public void UserSpv_login_with_valid_UserSpvname_and_password(String string, String string2) {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.id("tl_login-1-51550_text")).sendKeys(string);
@@ -36,8 +36,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User get login validate {string}")
-	public void user_get_login_validate(String string) {
+	@When("UserSpv get login validate {string}")
+	public void UserSpv_get_login_validate(String string) {
 		try {
 			Thread.sleep(1000);
 			WebElement welcomeText = driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
@@ -48,8 +48,8 @@ public class UploadData {
 
 	}
 
-	@When("User click ok to the validate message")
-	public void user_click_ok_to_the_validate_message() {
+	@When("UserSpv click ok to the validate message")
+	public void UserSpv_click_ok_to_the_validate_message() {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[normalize-space()='OK']")).click();
@@ -58,8 +58,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User move to table Data")
-	public void user_move_to_table_Data() {
+	@When("UserSpv move to table Data")
+	public void UserSpv_move_to_table_Data() {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//h3[@id='ui-id-11']")).click();
@@ -68,8 +68,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User move to table {string}")
-	public void user_move_to_table_upload(String string) {
+	@When("UserSpv move to table {string}")
+	public void UserSpv_move_to_table_upload(String string) {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[normalize-space()='" + string + "']")).click();
@@ -78,8 +78,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User import excel file from directory {string}")
-	public void user_import_excel_file_from_directory(String string) {
+	@When("UserSpv import excel file from directory {string}")
+	public void UserSpv_import_excel_file_from_directory(String string) {
 		try {
 			Thread.sleep(1000);
 			WebElement chooseFile = driver.findElement(By.xpath("//input[@id='tl_upload_new--52043_text']"));
@@ -89,8 +89,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User click {string} file")
-	public void user_click_file(String string) {
+	@When("UserSpv click {string} file")
+	public void UserSpv_click_file(String string) {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[normalize-space()='" + string + "']")).click();
@@ -100,8 +100,8 @@ public class UploadData {
 
 	}
 
-	@When("User save the new file")
-	public void user_save_the_new_file() {
+	@When("UserSpv save the new file")
+	public void UserSpv_save_the_new_file() {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[@id='52055_query']")).click();
@@ -111,8 +111,8 @@ public class UploadData {
 
 	}
 
-	@When("User get measurement statement Yakin Menimpan ?")
-	public void user_get_measurement_statement() {
+	@When("UserSpv get measurement statement Yakin Menimpan ?")
+	public void UserSpv_get_measurement_statement() {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@id='formtl_upload_newdialog-123']"));
@@ -121,8 +121,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User click {string} button")
-	public void user_click_button(String string) {
+	@When("UserSpv click {string} button")
+	public void UserSpv_click_button(String string) {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[normalize-space()='" + string + "']")).click();
@@ -131,8 +131,8 @@ public class UploadData {
 		}
 	}
 
-	@Then("User get validation message {string}")
-	public void user_get_validation_message(String string) {
+	@Then("UserSpv get validation message {string}")
+	public void UserSpv_get_validation_message(String string) {
 		try {
 			Thread.sleep(1000);
 			WebElement validation =driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
@@ -143,8 +143,8 @@ public class UploadData {
 		}
 	}
 
-	@Then("User get message {string}")
-	public void user_get_message(String string) {
+	@Then("UserSpv get message {string}")
+	public void UserSpv_get_message(String string) {
 		try {
 			Thread.sleep(1000);
 			WebElement validation =driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
@@ -154,8 +154,8 @@ public class UploadData {
 		}
 	}
 
-	@When("User close the validation message")
-	public void user_close_the_validation_message() {
+	@When("UserSpv close the validation message")
+	public void UserSpv_close_the_validation_message() {
 		try {
 			Thread.sleep(1000);
 			WebElement close =driver.findElement(By.xpath("//button[@title='Close']"));
