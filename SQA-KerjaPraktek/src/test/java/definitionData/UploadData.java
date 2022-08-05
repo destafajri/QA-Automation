@@ -1,5 +1,18 @@
 package definitionData;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Iterator;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +25,8 @@ import io.cucumber.java.en.When;
 
 public class UploadData {
 	WebDriver driver;
+	static String fileExcel;
+	static XSSFRow row;
 	String baseURL = "https://sqa.peluangkerjaku.com/tele/";
 
 	@Given("UserSpv on the login page")
@@ -80,6 +95,7 @@ public class UploadData {
 
 	@When("UserSpv import excel file from directory {string}")
 	public void UserSpv_import_excel_file_from_directory(String string) {
+		this.fileExcel = string;
 		try {
 			Thread.sleep(1000);
 			WebElement chooseFile = driver.findElement(By.xpath("//input[@id='tl_upload_new--52043_text']"));
@@ -98,6 +114,39 @@ public class UploadData {
 
 		}
 
+	}
+
+	@Then("UserSpv get new data import on the page or website")
+	public void UserSpv_get_new_data_import_on_the_page() {
+		Boolean state = true;
+		while (state) {
+			// Excel data
+			try {
+				FileInputStream file = new FileInputStream(new File(fileExcel));
+				XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+				XSSFSheet sheet = workbook.getSheetAt(0);
+
+				Iterator<Row> iterator = sheet.iterator();
+				int counter = -1;
+
+				while (iterator.hasNext()) {
+					counter += 1;
+					row = (XSSFRow) iterator.next();
+					Iterator<Cell> cellIterator = row.cellIterator();
+
+					while (cellIterator.hasNext()) {
+						Cell cell = cellIterator.next();
+					}
+				}
+
+				System.out.println("dataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa excel ada= " + counter);
+				file.close();
+				state = false;
+			} catch (IOException e) {
+				System.out.println(e.getMessage());
+			}
+		}
 	}
 
 	@When("UserSpv save the new file")
@@ -133,24 +182,32 @@ public class UploadData {
 
 	@Then("UserSpv get validation message {string}")
 	public void UserSpv_get_validation_message(String string) {
-		try {
-			Thread.sleep(1000);
-			WebElement validation =driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
-			Assert.assertEquals(validation.getText(), string);
-			driver.close();
-		} catch (Exception e) {
+		Boolean state = true;
+		while (state) {
+			try {
+				Thread.sleep(1000);
+				WebElement validation = driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
+				Assert.assertEquals(validation.getText(), string);
+				driver.close();
+				state = false;
+			} catch (Exception e) {
 
+			}
 		}
 	}
 
 	@Then("UserSpv get message {string}")
 	public void UserSpv_get_message(String string) {
-		try {
-			Thread.sleep(1000);
-			WebElement validation =driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
-			Assert.assertEquals(validation.getText(), string);
-		} catch (Exception e) {
+		Boolean state = true;
+		while (state) {
+			try {
+				Thread.sleep(1000);
+				WebElement validation = driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
+				Assert.assertEquals(validation.getText(), string);
+				state = false;
+			} catch (Exception e) {
 
+			}
 		}
 	}
 
@@ -158,7 +215,7 @@ public class UploadData {
 	public void UserSpv_close_the_validation_message() {
 		try {
 			Thread.sleep(1000);
-			WebElement close =driver.findElement(By.xpath("//button[@title='Close']"));
+			WebElement close = driver.findElement(By.xpath("//button[@title='Close']"));
 			close.click();
 		} catch (Exception e) {
 
