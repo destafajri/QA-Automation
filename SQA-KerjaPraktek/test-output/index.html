@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\ASUS\AppData\Local\Temp\testng-eclipse--1743314521\testng-customsuite.xml</span>
+                    <span>C:\Users\ASUS\AppData\Local\Temp\testng-eclipse-598816877\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">10 methods, 3 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerLogin" hash-for-method="runScenario(&quot;InValid Login&quot;, &quot;login Test&quot;)">runScenario("InValid Login", "login Test")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerLogin" hash-for-method="runScenario(&quot;InValid Login&quot;, &quot;login Test&quot;)">runScenario("InValid Login", "login Test")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerData" hash-for-method="runScenario(&quot;Valid Upload&quot;, &quot;Upload Data Test&quot;)">runScenario("Valid Upload", "Upload Data Test")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -107,12 +131,12 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerData" hash-for-method="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">runScenario("InValid distribute", "Distribute Data Test")</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerLogin" hash-for-method="runScenario(&quot;InValid Login&quot;, &quot;login Test&quot;)">runScenario("InValid Login", "login Test")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerData" hash-for-method="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">runScenario("InValid distribute", "Distribute Data Test")</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerLogin" hash-for-method="runScenario(&quot;Valid Login&quot;, &quot;login Test&quot;)">runScenario("Valid Login", "login Test")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -127,7 +151,12 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerData" hash-for-method="runScenario(&quot;Valid Upload&quot;, &quot;Upload Data Test&quot;)">runScenario("Valid Upload", "Upload Data Test")</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerData" hash-for-method="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">runScenario("InValid distribute", "Distribute Data Test")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="runner.RunnerData" hash-for-method="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">runScenario("InValid distribute", "Distribute Data Test")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -142,32 +171,88 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">runner.RunnerData</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Valid Upload&quot;, &quot;Upload Data Test&quot;)">
+                  </a> <!-- runScenario("Valid Upload", "Upload Data Test") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Valid Upload", "Upload Data Test")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Data Berhasil Simpan] but found []
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at definitionData.UploadData.UserSpv_get_validation_message(UploadData.java:215)
+	at ✽.UserSpv get validation message &quot;Data Berhasil Simpan&quot;(file:///C:/Users/ASUS/Desktop/Quality%20Assurance/SQA%20Project/SQA-KerjaPraktek/src/test/resources/DataFeatureFiles/uploadData.feature:16)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">runner.RunnerLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;InValid Login&quot;, &quot;login Test&quot;)">
+                  </a> <!-- runScenario("InValid Login", "login Test") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("InValid Login", "login Test")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Username atau password tidak ditemukan atau akun anda tidak aktif] but found [Welcome to Tele Kita]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at definitionLogin.Login.user_get_alert_notification(Login.java:71)
+	at ✽.User get alert or notification &quot;Username atau password tidak ditemukan atau akun anda tidak aktif&quot;(file:///C:/Users/ASUS/Desktop/Quality%20Assurance/SQA%20Project/SQA-KerjaPraktek/src/test/resources/LoginFeatureFiles/login.feature:15)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;InValid Login&quot;, &quot;login Test&quot;)">
+                  </a> <!-- runScenario("InValid Login", "login Test") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("InValid Login", "login Test")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Username atau password tidak ditemukan atau akun anda tidak aktif] but found [Welcome to Tele Kita]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at definitionLogin.Login.user_get_alert_notification(Login.java:71)
+	at ✽.User get alert or notification &quot;Username atau password tidak ditemukan atau akun anda tidak aktif&quot;(file:///C:/Users/ASUS/Desktop/Quality%20Assurance/SQA%20Project/SQA-KerjaPraktek/src/test/resources/LoginFeatureFiles/login.feature:15)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">runner.RunnerData</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">
-                  </a> <!-- runScenario("InValid distribute", "Distribute Data Test") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("InValid distribute", "Distribute Data Test")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">
-                  </a> <!-- runScenario("InValid distribute", "Distribute Data Test") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("InValid distribute", "Distribute Data Test")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">
@@ -200,10 +285,48 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Valid Upload&quot;, &quot;Upload Data Test&quot;)">
-                  </a> <!-- runScenario("Valid Upload", "Upload Data Test") -->
+                  <a name="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">
+                  </a> <!-- runScenario("InValid distribute", "Distribute Data Test") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Valid Upload", "Upload Data Test")</span>
+                  <span class="parameters">("InValid distribute", "Distribute Data Test")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;InValid distribute&quot;, &quot;Distribute Data Test&quot;)">
+                  </a> <!-- runScenario("InValid distribute", "Distribute Data Test") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("InValid distribute", "Distribute Data Test")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">runner.RunnerLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;InValid Login&quot;, &quot;login Test&quot;)">
+                  </a> <!-- runScenario("InValid Login", "login Test") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("InValid Login", "login Test")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Valid Login&quot;, &quot;login Test&quot;)">
+                  </a> <!-- runScenario("Valid Login", "login Test") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Valid Login", "login Test")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -213,7 +336,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ASUS\AppData\Local\Temp\testng-eclipse--1743314521\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ASUS\AppData\Local\Temp\testng-eclipse-598816877\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -222,7 +345,14 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;definitionData.DistributeData&quot;/&gt;
+      &lt;class name=&quot;runner.RunnerLogin&quot;/&gt;
+      &lt;class name=&quot;definitionData.DriverConnection&quot;/&gt;
+      &lt;class name=&quot;definitionLogin.DriverConnection&quot;/&gt;
+      &lt;class name=&quot;definitionData.UploadData&quot;/&gt;
       &lt;class name=&quot;runner.RunnerData&quot;/&gt;
+      &lt;class name=&quot;definitionLogin.Login&quot;/&gt;
+      &lt;class name=&quot;definitionData.EditData&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -236,7 +366,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Default test (1 class)</span>
+                <span class="test-name">Default test (8 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -270,36 +400,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'runner.RunnerData')
-data.setCell(0, 3, 23493);
+data.setCell(0, 3, 23637);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'runner.RunnerData')
-data.setCell(1, 3, 19865);
+data.setCell(1, 3, 20679);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'runner.RunnerData')
-data.setCell(2, 3, 19520);
+data.setCell(2, 3, 19280);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
 data.setCell(3, 2, 'runner.RunnerData')
-data.setCell(3, 3, 17289);
+data.setCell(3, 3, 17906);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'runScenario')
 data.setCell(4, 2, 'runner.RunnerData')
-data.setCell(4, 3, 14638);
+data.setCell(4, 3, 14482);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'runScenario')
 data.setCell(5, 2, 'runner.RunnerData')
-data.setCell(5, 3, 14436);
+data.setCell(5, 3, 12124);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'runScenario')
+data.setCell(6, 2, 'runner.RunnerLogin')
+data.setCell(6, 3, 9922);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'runScenario')
+data.setCell(7, 2, 'runner.RunnerLogin')
+data.setCell(7, 3, 7398);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'runScenario')
+data.setCell(8, 2, 'runner.RunnerLogin')
+data.setCell(8, 3, 6675);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'runScenario')
+data.setCell(9, 2, 'runner.RunnerLogin')
+data.setCell(9, 3, 6426);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -325,38 +471,71 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">runner.RunnerData</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">runner.RunnerLogin</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("Valid distribute", "Distribute Data Test")</span>
-                <span class="method-start">691 ms</span>
+                <span class="method-name">runScenario("Valid Login", "login Test")</span>
+                <span class="method-start">427 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">runScenario("InValid distribute", "Distribute Data Test")</span>
-                <span class="method-start">24192 ms</span>
+                <span class="method-name">runScenario("InValid Login", "login Test")</span>
+                <span class="method-start">10354 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">runScenario("InValid distribute", "Distribute Data Test")</span>
-                <span class="method-start">38637 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("InValid Login", "login Test")</span>
+                <span class="method-start">17032 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">runScenario("InValid distribute", "Distribute Data Test")</span>
-                <span class="method-start">58504 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">runScenario("Valid Upload", "Upload Data Test")</span>
-                <span class="method-start">73155 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">runScenario("InValid Upload", "Upload Data Test")</span>
-                <span class="method-start">90446 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("InValid Login", "login Test")</span>
+                <span class="method-start">23459 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">109969 ms</span>
+                <span class="method-start">30864 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">runner.RunnerData</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
+                <span class="method-start">31271 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Valid distribute", "Distribute Data Test")</span>
+                <span class="method-start">31304 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("InValid distribute", "Distribute Data Test")</span>
+                <span class="method-start">54943 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("InValid distribute", "Distribute Data Test")</span>
+                <span class="method-start">69427 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("InValid distribute", "Distribute Data Test")</span>
+                <span class="method-start">90107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Valid Upload", "Upload Data Test")</span>
+                <span class="method-start">102235 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("InValid Upload", "Upload Data Test")</span>
+                <span class="method-start">120143 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">139425 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

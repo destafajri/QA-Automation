@@ -10,6 +10,13 @@
           <include name="setUpClass"/>
         </methods>
       </class> <!-- runner.RunnerData -->
+      <class name="runner.RunnerLogin">
+        <methods>
+          <include name="runScenario" invocation-numbers="2 3"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- runner.RunnerLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

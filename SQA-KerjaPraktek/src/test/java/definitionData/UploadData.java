@@ -12,11 +12,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -118,7 +121,25 @@ public class UploadData {
 
 	@Then("UserSpv get new data import on the page or website")
 	public void UserSpv_get_new_data_import_on_the_page() {
+		int dataTabel = 0;
+		int dataExcel = 0;
+		
 		Boolean state = true;
+		while (state) {
+			try {
+				Thread.sleep(1000);
+				// *[@id="tl_upload_new--52045_table"]/tbody/tr
+				List<WebElement> jml = driver
+						.findElements(By.xpath("//*[@id=\"tl_upload_new--52045_table\"]/tbody/tr"));
+				System.out.println( "jumlah table " + jml.size());
+				dataTabel=jml.size();
+				state = false;
+			} catch (Exception e) {
+			}
+		}
+		
+		
+		state = true;
 		while (state) {
 			// Excel data
 			try {
@@ -140,12 +161,18 @@ public class UploadData {
 					}
 				}
 
-				System.out.println("dataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa excel ada= " + counter);
+				System.out.println("data excel ada= " + counter);
+				dataExcel = counter;
 				file.close();
 				state = false;
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
 			}
+			
+			System.out.println(dataTabel + " jumlah data table");
+			System.out.println(dataExcel + " jumlah data excel");
+			 Assert.assertEquals(dataExcel, dataTabel);
+			//div[@id='tl_upload_new--52045']//div[8]
 		}
 	}
 
@@ -186,7 +213,8 @@ public class UploadData {
 		while (state) {
 			try {
 				Thread.sleep(1000);
-				WebElement validation = driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
+				WebDriverWait wait = new WebDriverWait(driver, 50);
+				WebElement validation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\\\"nikita-form-dialog\\\"]/p")));
 				Assert.assertEquals(validation.getText(), string);
 				driver.close();
 				state = false;
