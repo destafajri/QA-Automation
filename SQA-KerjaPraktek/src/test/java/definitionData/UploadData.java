@@ -86,11 +86,11 @@ public class UploadData {
 		}
 	}
 
-	@When("UserSpv move to table {string}")
-	public void UserSpv_move_to_table_upload(String string) {
+	@When("UserSpv move to table Upload Data")
+	public void UserSpv_move_to_table_upload() {
 		try {
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[normalize-space()='" + string + "']")).click();
+			driver.findElement(By.xpath("//span[normalize-space()='Upload Data']")).click();
 		} catch (Exception e) {
 
 		}
@@ -108,11 +108,11 @@ public class UploadData {
 		}
 	}
 
-	@When("UserSpv click {string} file")
-	public void UserSpv_click_file(String string) {
+	@When("UserSpv click Upload file")
+	public void UserSpv_click_file() {
 		try {
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[normalize-space()='" + string + "']")).click();
+			driver.findElement(By.xpath("//span[normalize-space()='Upload']")).click();
 		} catch (Exception e) {
 
 		}
@@ -197,11 +197,12 @@ public class UploadData {
 		}
 	}
 
-	@When("UserSpv click {string} button")
-	public void UserSpv_click_button(String string) {
+	@When("UserSpv click SIMPAN button")
+	public void UserSpv_click_button() {
 		try {
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[normalize-space()='" + string + "']")).click();
+			WebElement simpan = driver.findElement(By.xpath("//span[normalize-space()='SIMPAN']"));
+			simpan.click();
 		} catch (Exception e) {
 
 		}
@@ -213,8 +214,9 @@ public class UploadData {
 		while (state) {
 			try {
 				Thread.sleep(1000);
+				//p[normalize-space()='Data Berhasil Simpan']
 				WebDriverWait wait = new WebDriverWait(driver, 50);
-				WebElement validation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\\\"nikita-form-dialog\\\"]/p")));
+				WebElement validation = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nikita-form-dialog']/p")));
 				Assert.assertEquals(validation.getText(), string);
 				driver.close();
 				state = false;
@@ -230,7 +232,7 @@ public class UploadData {
 		while (state) {
 			try {
 				Thread.sleep(1000);
-				WebElement validation = driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
+				WebElement validation = driver.findElement(By.xpath("//*[@id='nikita-form-dialog']/p"));
 				Assert.assertEquals(validation.getText(), string);
 				state = false;
 			} catch (Exception e) {

@@ -7,7 +7,7 @@ glue = "definitionLogin",
 plugin={
 	"pretty",
 	"html:target/cucumber-reports",
-	"json:target/cucumber-reports/cobaTest.json"
+	"json:target/cucumber-reports/LoginTest.json"
 })
 public class RunnerLogin extends AbstractTestNGCucumberTests {
 
