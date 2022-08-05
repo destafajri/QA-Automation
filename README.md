@@ -31,3 +31,37 @@ Step 2- Execute Selenium test on port 9222
 
       // now you can use now existing Browser
       driver.get(targetURL); ==>type the URL what you want to browse
+      
+      
+      
+      
+#HOW TO OPEN EXCEL (.xlsx) using maven
+
+Maven dependency
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi</artifactId>
+          <version>5.2.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml</artifactId>
+          <version>5.2.0</version>
+      </dependency>
+
+
+Library
+      import org.apache.poi.ss.usermodel.Cell;
+      import org.apache.poi.ss.usermodel.Row;
+      import org.apache.poi.ss.usermodel.Sheet;
+      import org.apache.poi.ss.usermodel.Workbook;
+      import org.apache.poi.xssf.usermodel.XSSFRow;
+      import org.apache.poi.xssf.usermodel.XSSFSheet;
+      import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+      import java.io.File;
+      import java.io.FileInputStream;
+      import java.io.IOException;
+      import java.util.Iterator;
+
+
