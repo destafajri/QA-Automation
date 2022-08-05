@@ -38,18 +38,18 @@ Step 2- Execute Selenium test on port 9222
 #HOW TO OPEN EXCEL (.xlsx) using maven
 
 Maven dependency
-<!--       
-      <dependency>
-          <groupId>org.apache.poi</groupId>
-          <artifactId>poi</artifactId>
-          <version>5.2.0</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.poi</groupId>
-          <artifactId>poi-ooxml</artifactId>
-          <version>5.2.0</version>
-      </dependency>
- -->
+                  <!--       
+                        <dependency>
+                            <groupId>org.apache.poi</groupId>
+                            <artifactId>poi</artifactId>
+                            <version>5.2.0</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.poi</groupId>
+                            <artifactId>poi-ooxml</artifactId>
+                            <version>5.2.0</version>
+                        </dependency>
+                   -->
 
 Library
       import org.apache.poi.ss.usermodel.Cell;
