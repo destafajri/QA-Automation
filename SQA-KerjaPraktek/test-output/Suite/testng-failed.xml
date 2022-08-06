@@ -3,13 +3,6 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="runner.RunnerData">
-        <methods>
-          <include name="runScenario" invocation-numbers="0 1 2 3 4 5"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- runner.RunnerData -->
       <class name="runner.RunnerLogin">
         <methods>
           <include name="runScenario" invocation-numbers="2 3"/>
