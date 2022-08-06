@@ -14,6 +14,7 @@ import io.cucumber.java.en.When;
 public class EditData {
 	WebDriver driver;
 	String agent;
+	String status;
 
 	@Given("User login with username {string} and password {string}")
 	public void user_login_with_username_and_password(String string, String string2) {
@@ -111,6 +112,21 @@ public class EditData {
 		/* on going
 		 * wait a few moment
 		 */
+		state = true;
+		while (state) {
+			try {
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//select[@id='tl_edit_user_activity-12-52786_text']")).click();
+				//*[@id="tl_edit_user_activity-12-52786_text"]/option[2]
+				WebElement status = driver.findElement(By.xpath("//*[@id=\"tl_edit_user_activity-12-52786_text\"]/option[2]"));
+				status.click();
+				System.out.println("status dalam kotak yang dipilih " + status.getText());
+				this.status = status.getText();
+				state = false;
+			} catch (Exception e) {
+				System.out.println("6" + e);
+			}
+		}
 	}
 
 	@When("User confirm or click update button")
@@ -139,7 +155,7 @@ public class EditData {
 		}
 	}
 
-	@Then("User see data changed successfully for earliest data")
+	@Then("User see data changed successfully")
 	public void user_see_data_changed_successfully() {
 		Boolean state = true;
 		while (state) {
@@ -147,7 +163,10 @@ public class EditData {
 				Thread.sleep(1000);
 				WebElement agentAct = driver.findElement(By.xpath("//td[@id='tl_edit_data--52536-cell-0-10']"));
 				System.out.println("agent yang dilihat setelah di update " + agentAct.getText());
+				WebElement statusAct =driver.findElement(By.xpath("//*[@id=\"tl_edit_data--52536-cell-0-9\"]"));
+				System.out.println("status acivity yang dilihat setelah di update " + statusAct.getText());
 				Assert.assertEquals(agent, agentAct.getText());
+				Assert.assertEquals(status, statusAct.getText());
 				driver.close();
 				state = false;
 			} catch (Exception e) {
@@ -155,24 +174,7 @@ public class EditData {
 			}
 		}
 	}
-
-	@Then("User see data changed successfully for latest data")
-	public void user_see_data_changed_successfully_change() {
-		Boolean state = true;
-		while (state) {
-			try {
-				Thread.sleep(1000);
-				WebElement agentAct = driver.findElement(By.xpath("//*[@id=\"tl_edit_data--52536-cell-6-10\"]"));
-				System.out.println("agent yang dilihat setelah di update " + agentAct.getText());
-				Assert.assertEquals(agent, agentAct.getText());
-				driver.close();
-				state = false;
-			} catch (Exception e) {
-				System.out.println("9" + e);
-			}
-		}
-	}
-
+	
 	@When("User select the latest data")
 	public void user_select_the_latest_data() {
 		Boolean state = true;
@@ -190,7 +192,7 @@ public class EditData {
 		while (state) {
 			try {
 				Thread.sleep(1000);
-				driver.findElement(By.xpath("//*[@id=\"tl_edit_data--52536_table\"]/tbody/tr[7]")).click();
+				driver.findElement(By.xpath("//*[@id=\"tl_edit_data--52536_table\"]/tbody/tr[1]")).click();
 				state = false;
 			} catch (Exception e) {
 				System.out.println("5" + e);
@@ -200,6 +202,7 @@ public class EditData {
 
 	@When("User not confirm or click close button")
 	public void user_not_confirm_or_click_close_button() {
+		//agent
 		Boolean state = true;
 		while (state) {
 			try {
@@ -213,6 +216,25 @@ public class EditData {
 				System.out.println("6" + e);
 			}
 		}
+		//status
+		state = true;
+		while (state) {
+			try {
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//select[@id='tl_edit_user_activity-12-52786_text']")).click();
+				//*[@id="tl_edit_user_activity-12-52786_text"]/option[2]
+				//*[@id="tl_edit_user_activity-12-52786_text"]/option[12]
+				WebElement status = driver.findElement(By.xpath("//*[@id=\"tl_edit_user_activity-12-52786_text\"]/option[12]"));
+				status.click();
+				System.out.println("status dalam kotak yang tidak dipilih " + status.getText());
+				this.status = status.getText();
+				state = false;
+			} catch (Exception e) {
+				System.out.println("6" + e);
+			}
+		}
+
+		//close button
 		state = true;
 		while (state) {
 			try {
@@ -225,7 +247,7 @@ public class EditData {
 		}
 	}
 
-	@Then("User see data not changed for earliest data")
+	@Then("User see data not changed")
 	public void user_see_data_not_changed() {
 		Boolean state = true;
 		while (state) {
@@ -233,24 +255,10 @@ public class EditData {
 				Thread.sleep(1000);
 				WebElement agentAct = driver.findElement(By.xpath("//td[@id='tl_edit_data--52536-cell-0-10']"));
 				System.out.println("agent yang dilihat pada tabel " + agentAct.getText());
+				WebElement statusAct =driver.findElement(By.xpath("//*[@id=\"tl_edit_data--52536-cell-0-9\"]"));
+				System.out.println("status acivity yang dilihat setelah di update " + statusAct.getText());
 				Assert.assertNotEquals(agent, agentAct.getText());
-				driver.close();
-				state = false;
-			} catch (Exception e) {
-				System.out.println("9" + e);
-			}
-		}
-	}
-
-	@Then("User see data not changed for latest data")
-	public void user_see_data_not_changed_for() {
-		Boolean state = true;
-		while (state) {
-			try {
-				Thread.sleep(1000);
-				WebElement agentAct = driver.findElement(By.xpath("//*[@id=\"tl_edit_data--52536-cell-6-10\"]"));
-				System.out.println("agent yang dilihat pada tabel " + agentAct.getText());
-				Assert.assertNotEquals(agent, agentAct.getText());
+				Assert.assertNotEquals(status, statusAct.getText());
 				driver.close();
 				state = false;
 			} catch (Exception e) {

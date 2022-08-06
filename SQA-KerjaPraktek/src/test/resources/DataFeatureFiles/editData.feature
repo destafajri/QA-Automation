@@ -9,7 +9,7 @@ Feature: Edit Data Test
 		And User select the earliest data
 		And User update or edit the data
 		And User confirm or click update button
-		Then User see data changed successfully for earliest data
+		Then User see data changed successfully
 		
 		
 	Scenario: Valid Edit
@@ -21,7 +21,7 @@ Feature: Edit Data Test
 		And User select the latest data
 		And User update or edit the data
 		And User confirm or click update button
-		Then User see data changed successfully for latest data
+		Then User see data changed successfully
 
 	Scenario: InValid Edit
 		Given User login with username "developer" and password "23"
@@ -32,7 +32,7 @@ Feature: Edit Data Test
 		And User select the earliest data
 		And User update or edit the data
 		And User not confirm or click close button
-		Then User see data not changed for earliest data
+		Then User see data not changed
 		
 	Scenario: InValid Edit
 		Given User login with username "developer" and password "23"
@@ -43,4 +43,4 @@ Feature: Edit Data Test
 		And User select the latest data
 		And User update or edit the data
 		And User not confirm or click close button
-		Then User see data not changed for latest data
+		Then User see data not changed
