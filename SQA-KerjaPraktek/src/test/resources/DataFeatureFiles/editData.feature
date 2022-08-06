@@ -2,8 +2,8 @@ Feature: Edit Data Test
 
 	Scenario: Valid Edit
 		Given User login with username "developer" and password "23"
-		When User get login message "Welcome to Tele Kita"
-		And User click ok to the validate message
+		When User get login msg "Welcome to Tele Kita"
+		And User click ok to the validate msg
 		And User move to table_Data
 		And User move to table Edit Data
 		And User select the earliest data
@@ -14,8 +14,8 @@ Feature: Edit Data Test
 		
 	Scenario: Valid Edit
 		Given User login with username "developer" and password "23"
-		When User get login message "Welcome to Tele Kita"
-		And User click ok to the validate message
+		When User get login msg "Welcome to Tele Kita"
+		And User click ok to the validate msg
 		And User move to table_Data
 		And User move to table Edit Data
 		And User select the latest data
@@ -25,8 +25,8 @@ Feature: Edit Data Test
 
 	Scenario: InValid Edit
 		Given User login with username "developer" and password "23"
-		When User get login message "Welcome to Tele Kita"
-		And User click ok to the validate message
+		When User get login msg "Welcome to Tele Kita"
+		And User click ok to the validate msg
 		And User move to table_Data
 		And User move to table Edit Data
 		And User select the earliest data
@@ -36,8 +36,8 @@ Feature: Edit Data Test
 		
 	Scenario: InValid Edit
 		Given User login with username "developer" and password "23"
-		When User get login message "Welcome to Tele Kita"
-		And User click ok to the validate message
+		When User get login msg "Welcome to Tele Kita"
+		And User click ok to the validate msg
 		And User move to table_Data
 		And User move to table Edit Data
 		And User select the latest data

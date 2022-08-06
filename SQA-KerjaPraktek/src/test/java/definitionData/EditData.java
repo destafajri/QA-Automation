@@ -25,8 +25,8 @@ public class EditData {
 		driver.findElement(By.xpath("//span[normalize-space()='Sign In']")).click();
 	}
 
-	@When("User get login message {string}")
-	public void user_get_login_message(String string) {
+	@When("User get login msg {string}")
+	public void user_get_login_msg(String string) {
 		try {
 			Thread.sleep(1000);
 			WebElement welcomeText = driver.findElement(By.xpath("//*[@id=\"nikita-form-dialog\"]/p"));
@@ -38,8 +38,8 @@ public class EditData {
 
 	}
 
-	@When("User click ok to the validate message")
-	public void user_click_ok_to_the_validate_message() {
+	@When("User click ok to the validate msg")
+	public void user_click_ok_to_the_validate_msg() {
 		try {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[normalize-space()='OK']")).click();
