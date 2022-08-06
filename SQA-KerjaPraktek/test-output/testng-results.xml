@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="3" ignored="0" total="14" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="211272" started-at="2022-08-06T16:02:31 ICT" finished-at="2022-08-06T16:06:02 ICT">
+  <suite name="Default suite" duration-ms="193531" started-at="2022-08-06T16:12:35 ICT" finished-at="2022-08-06T16:15:49 ICT">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="211272" started-at="2022-08-06T16:02:31 ICT" finished-at="2022-08-06T16:06:02 ICT">
+    <test name="Default test" duration-ms="193531" started-at="2022-08-06T16:12:35 ICT" finished-at="2022-08-06T16:15:49 ICT">
       <class name="runner.RunnerLogin">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="setUpClass" is-config="true" duration-ms="374" started-at="2022-08-06T16:02:31 ICT" finished-at="2022-08-06T16:02:31 ICT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="setUpClass" is-config="true" duration-ms="346" started-at="2022-08-06T16:12:35 ICT" finished-at="2022-08-06T16:12:36 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="8361" started-at="2022-08-06T16:02:31 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:02:40 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="8026" started-at="2022-08-06T16:12:36 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:12:44 ICT">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="6611" started-at="2022-08-06T16:02:40 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:02:46 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="6526" started-at="2022-08-06T16:12:44 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:12:50 ICT">
           <params>
             <param index="0">
               <value>
@@ -47,39 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="6589" started-at="2022-08-06T16:02:46 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:02:53 ICT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["InValid Login"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["login Test"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Username atau password tidak ditemukan atau akun anda tidak aktif] but found [Welcome to Tele Kita]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Username atau password tidak ditemukan atau akun anda tidak aktif] but found [Welcome to Tele Kita]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:575)
-at org.testng.Assert.assertEquals(Assert.java:585)
-at definitionLogin.Login.user_get_alert_notification(Login.java:71)
-at ✽.User get alert or notification "Username atau password tidak ditemukan atau akun anda tidak aktif"(file:///C:/Users/ASUS/Desktop/Quality%20Assurance/SQA%20Project/SQA-KerjaPraktek/src/test/resources/LoginFeatureFiles/login.feature:15)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="6422" started-at="2022-08-06T16:02:53 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:02:59 ICT">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="6260" started-at="2022-08-06T16:12:50 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:12:56 ICT">
           <params>
             <param index="0">
               <value>
@@ -111,17 +79,49 @@ at ✽.User get alert or notification "Username atau password tidak ditemukan at
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="tearDownClass" is-config="true" duration-ms="261" started-at="2022-08-06T16:02:59 ICT" finished-at="2022-08-06T16:03:00 ICT">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="runScenario" duration-ms="6433" started-at="2022-08-06T16:12:56 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:13:03 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["InValid Login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["login Test"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Username atau password tidak ditemukan atau akun anda tidak aktif] but found [Welcome to Tele Kita]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Username atau password tidak ditemukan atau akun anda tidak aktif] but found [Welcome to Tele Kita]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at definitionLogin.Login.user_get_alert_notification(Login.java:71)
+at ✽.User get alert or notification "Username atau password tidak ditemukan atau akun anda tidak aktif"(file:///C:/Users/ASUS/Desktop/Quality%20Assurance/SQA%20Project/SQA-KerjaPraktek/src/test/resources/LoginFeatureFiles/login.feature:15)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runner.RunnerLogin@4d50efb8]" name="tearDownClass" is-config="true" duration-ms="244" started-at="2022-08-06T16:13:03 ICT" finished-at="2022-08-06T16:13:03 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- runner.RunnerLogin -->
       <class name="runner.RunnerData">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runner.RunnerData@7e2d773b]" name="setUpClass" is-config="true" duration-ms="26" started-at="2022-08-06T16:03:00 ICT" finished-at="2022-08-06T16:03:00 ICT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runner.RunnerData@7e2d773b]" name="setUpClass" is-config="true" duration-ms="23" started-at="2022-08-06T16:13:03 ICT" finished-at="2022-08-06T16:13:03 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="22353" started-at="2022-08-06T16:03:00 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:03:22 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="21197" started-at="2022-08-06T16:13:03 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:13:24 ICT">
           <params>
             <param index="0">
               <value>
@@ -137,7 +137,7 @@ at ✽.User get alert or notification "Username atau password tidak ditemukan at
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="22164" started-at="2022-08-06T16:03:22 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:03:44 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="14427" started-at="2022-08-06T16:13:24 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:13:39 ICT">
           <params>
             <param index="0">
               <value>
@@ -153,7 +153,7 @@ at ✽.User get alert or notification "Username atau password tidak ditemukan at
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="18170" started-at="2022-08-06T16:03:44 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:04:02 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="19584" started-at="2022-08-06T16:13:39 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:13:58 ICT">
           <params>
             <param index="0">
               <value>
@@ -169,7 +169,7 @@ at ✽.User get alert or notification "Username atau password tidak ditemukan at
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="15137" started-at="2022-08-06T16:04:02 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:04:17 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="12285" started-at="2022-08-06T16:13:58 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:14:11 ICT">
           <params>
             <param index="0">
               <value>
@@ -185,7 +185,7 @@ at ✽.User get alert or notification "Username atau password tidak ditemukan at
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="13502" started-at="2022-08-06T16:04:17 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:04:31 ICT">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="13090" started-at="2022-08-06T16:14:11 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:14:24 ICT">
           <params>
             <param index="0">
               <value>
@@ -217,7 +217,7 @@ at ✽.User see data changed successfully(file:///C:/Users/ASUS/Desktop/Quality%
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="21876" started-at="2022-08-06T16:04:31 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:04:53 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="14705" started-at="2022-08-06T16:14:24 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:14:38 ICT">
           <params>
             <param index="0">
               <value>
@@ -233,7 +233,7 @@ at ✽.User see data changed successfully(file:///C:/Users/ASUS/Desktop/Quality%
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="15335" started-at="2022-08-06T16:04:53 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:05:08 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="16264" started-at="2022-08-06T16:14:38 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:14:55 ICT">
           <params>
             <param index="0">
               <value>
@@ -249,7 +249,7 @@ at ✽.User see data changed successfully(file:///C:/Users/ASUS/Desktop/Quality%
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="16247" started-at="2022-08-06T16:05:08 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:05:24 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="15265" started-at="2022-08-06T16:14:55 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:15:10 ICT">
           <params>
             <param index="0">
               <value>
@@ -265,7 +265,7 @@ at ✽.User see data changed successfully(file:///C:/Users/ASUS/Desktop/Quality%
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="18856" started-at="2022-08-06T16:05:24 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:05:43 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="20627" started-at="2022-08-06T16:15:10 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:15:31 ICT">
           <params>
             <param index="0">
               <value>
@@ -281,7 +281,7 @@ at ✽.User see data changed successfully(file:///C:/Users/ASUS/Desktop/Quality%
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="18580" started-at="2022-08-06T16:05:43 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:06:02 ICT">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.RunnerData@7e2d773b]" name="runScenario" duration-ms="17863" started-at="2022-08-06T16:15:31 ICT" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-06T16:15:48 ICT">
           <params>
             <param index="0">
               <value>
@@ -297,7 +297,7 @@ at ✽.User see data changed successfully(file:///C:/Users/ASUS/Desktop/Quality%
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runner.RunnerData@7e2d773b]" name="tearDownClass" is-config="true" duration-ms="320" started-at="2022-08-06T16:06:02 ICT" finished-at="2022-08-06T16:06:02 ICT">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runner.RunnerData@7e2d773b]" name="tearDownClass" is-config="true" duration-ms="270" started-at="2022-08-06T16:15:48 ICT" finished-at="2022-08-06T16:15:49 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

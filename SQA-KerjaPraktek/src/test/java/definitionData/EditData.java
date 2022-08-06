@@ -175,7 +175,7 @@ public class EditData {
 		}
 	}
 	
-	@When("User select the latest data")
+	@When("User a pick data from the latest table")
 	public void user_select_the_latest_data() {
 		Boolean state = true;
 		while (state) {

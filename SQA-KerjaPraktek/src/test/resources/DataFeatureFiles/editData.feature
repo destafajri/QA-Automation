@@ -18,7 +18,7 @@ Feature: Edit Data Test
 		And User click ok to the validate msg
 		And User move to table_Data
 		And User move to table Edit Data
-		And User select the latest data
+		And User a pick data from the latest table
 		And User update or edit the data
 		And User confirm or click update button
 		Then User see data changed successfully
@@ -40,7 +40,7 @@ Feature: Edit Data Test
 		And User click ok to the validate msg
 		And User move to table_Data
 		And User move to table Edit Data
-		And User select the latest data
+		And User a pick data from the latest table
 		And User update or edit the data
 		And User not confirm or click close button
 		Then User see data not changed
