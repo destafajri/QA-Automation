@@ -34,11 +34,10 @@ public class UploadData {
 
 	@Given("UserSpv on the login page")
 	public void UserSpv_on_the_login_page() {
-		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
-
+		String path = System.getenv("WEBDRIVER");
+		System.setProperty("webdriver.chrome.driver", path);
 		this.driver = new ChromeDriver();
 		driver.get(baseURL);
-
 	}
 
 	@When("UserSpv login with valid UserSpvname {string} and password {string}")

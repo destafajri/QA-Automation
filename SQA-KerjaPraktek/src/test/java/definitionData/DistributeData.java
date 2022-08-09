@@ -16,7 +16,8 @@ public class DistributeData {
 
 	@Given("User on the login")
 	public void user_on_the_login_page() {
-		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+		String path = System.getenv("WEBDRIVER");
+		System.setProperty("webdriver.chrome.driver", path);
 		this.driver = new ChromeDriver();
 		driver.get("https://sqa.peluangkerjaku.com/tele/");
 

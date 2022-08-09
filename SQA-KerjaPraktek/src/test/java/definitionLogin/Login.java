@@ -16,8 +16,8 @@ public class Login {
 
 	@Given("User on the login page")
 	public void user_on_the_login_page() {
-		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
-
+		String path = System.getenv("WEBDRIVER");
+		System.setProperty("webdriver.chrome.driver", path);
 		this.driver = new ChromeDriver();
 		driver.get(baseURL);
 	}

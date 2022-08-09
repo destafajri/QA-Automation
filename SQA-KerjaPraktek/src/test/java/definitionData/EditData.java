@@ -18,7 +18,8 @@ public class EditData {
 
 	@Given("User login with username {string} and password {string}")
 	public void user_login_with_username_and_password(String string, String string2) {
-		System.setProperty("webdriver.chrome.driver", "C:\\webdriver\\chromedriver.exe");
+		String path = System.getenv("WEBDRIVER");
+		System.setProperty("webdriver.chrome.driver", path);
 		this.driver = new ChromeDriver();
 		driver.get("https://sqa.peluangkerjaku.com/tele/");
 		driver.findElement(By.id("tl_login-1-51550_text")).sendKeys(string);
