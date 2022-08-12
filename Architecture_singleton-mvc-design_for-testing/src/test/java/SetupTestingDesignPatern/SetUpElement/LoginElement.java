@@ -28,7 +28,7 @@ public class LoginElement {
 	@FindBy(id = "tl_login-1-51551_text")
 	private WebElement input_password_login;
 
-	@FindBy(id = "//span[normalize-space()='Sign In']")
+	@FindBy(xpath = "//span[normalize-space()='Sign In']")
 	private WebElement btn_submit_login;
 
 	@FindBy(xpath = "//*[@id='nikita-form-dialog']/p")
@@ -40,12 +40,12 @@ public class LoginElement {
 	
 	
 	//method
-	public void formUsername(String user) {
-		input_username_login.sendKeys(user);
+	public void formUsername(String username){
+		input_username_login.sendKeys(username);
 	}
 
-	public void formPassword(String pass) {
-		input_password_login.sendKeys(pass);
+	public void formPassword(String password) {
+		input_password_login.sendKeys(password);
 	}
 
 	public void submitBtn() {
