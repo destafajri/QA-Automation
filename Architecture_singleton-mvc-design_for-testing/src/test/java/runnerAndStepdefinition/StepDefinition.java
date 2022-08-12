@@ -24,6 +24,8 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.cucumber.spring.CucumberContextConfiguration;
 
 
@@ -96,24 +98,50 @@ public class StepDefinition {
 		if (scenario.isFailed()) {
 			fileCounter++;
 			extentTest.log(LogStatus.FAIL, screenShot());
-		} 
+		} else {
+			extentTest.log(LogStatus.PASS, "Step pass");
+		}
 	}
 
 	@After
 	public void endTestStep() {
 		reports.endTest(extentTest);
 		reports.flush();
-		driver.quit();
+//		driver.quit();
 	}
 
 	
 	// User Admin mengakses website
 		@Given("User Admin Mengakses URL sqa peluang kerjaku")
-		public void customer_mengakses_url() {
+		public void admin_mengakses_url() {
 			driver = DriverSingleton.getDriver();
 			driver.get(SetUpUtils.URL);
 			extentTest.log(LogStatus.PASS, "User Admin Mengakses Url "+SetUpUtils.URL);
 		}
+		
+	// User Admin melakukan login
+		@When("User Admin mengisi username")
+		public void admin_mengisi_username() {
+			loginPage.formUsername(config.getUsernameSuccess());
+		}
+		
+		@When("User Admin mengisi password")
+		public void admin_mengisi_password() {
+			loginPage.formPassword(config.getPassword());
+		}
+		
+		@When("User Admin menekan tombol submit")
+		public void admin_menekan_submit() {
+			loginPage.submitBtn();
+		}
+		
+		@Then("User Admin mendapatkan notifikasi")
+		public void notifikasi() {
+			loginPage.textValidation();
+			extentTest.log(LogStatus.PASS, "Welcome to Tele Kita");
+		}
+		
+		
 		
 		
 		

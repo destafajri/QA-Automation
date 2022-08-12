@@ -19,6 +19,8 @@ public class LoginElement {
 		this.driver = DriverSingleton.getDriver();
 		PageFactory.initElements(driver, this);
 	}
+	
+	//Element
 
 	@FindBy(id = "tl_login-1-51550_text")
 	private WebElement input_username_login;
@@ -37,9 +39,16 @@ public class LoginElement {
 
 	
 	
-	public void formLogin(String user, String pass) {
+	//method
+	public void formUsername(String user) {
 		input_username_login.sendKeys(user);
+	}
+
+	public void formPassword(String pass) {
 		input_password_login.sendKeys(pass);
+	}
+
+	public void submitBtn() {
 		btn_submit_login.click();
 	}
 
