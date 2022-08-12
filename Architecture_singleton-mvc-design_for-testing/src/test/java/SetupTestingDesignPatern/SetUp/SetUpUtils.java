@@ -1,4 +1,4 @@
-package Utils;
+package SetupTestingDesignPatern.SetUp;
 
 public class SetUpUtils {
 

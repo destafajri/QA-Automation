@@ -1,4 +1,4 @@
-package DriverSingleton;
+package SetupTestingDesignPatern.DriverSingleton;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

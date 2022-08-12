@@ -1,4 +1,4 @@
-package DriverSingleton;
+package SetupTestingDesignPatern.DriverSingleton;
 
 import java.util.concurrent.TimeUnit;
 

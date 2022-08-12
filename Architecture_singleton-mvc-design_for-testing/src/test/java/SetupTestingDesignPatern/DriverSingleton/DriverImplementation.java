@@ -1,6 +1,6 @@
-package DriverSingleton;
+package SetupTestingDesignPatern.DriverSingleton;
 
-import Utils.SetUpUtils;
+import SetupTestingDesignPatern.SetUp.SetUpUtils;
 
 public class DriverImplementation {
 	public static DriverStrategyInterface chooseStrategy(String strategy) {

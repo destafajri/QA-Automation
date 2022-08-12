@@ -79,7 +79,7 @@ public class userSpv {
 	}
 
 	@After
-	public void nendTestStep() {
+	public void endTestStep() {
 		reports.endTest(extentTest);
 		reports.flush();
 		driver.quit();
