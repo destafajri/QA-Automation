@@ -42,7 +42,7 @@ public class StepDefinition {
 	private static WebDriver driver;
 	private LoginElement loginPage;
 	
-	String direktoriFile = System.getProperty("user.dir") + "\\test-output\\myfileNeg";
+	String direktoriFile = System.getProperty("user.dir") + "\\test-output\\myfile";
 
 	public static ExtentTest extentTest ;
 	public static ExtentReports reports = new ExtentReports("ReportTest.html");;
@@ -65,53 +65,53 @@ public class StepDefinition {
 			"Test Scenario Edit Data User akhir negatif",
 	};
 	
-
 	//method screenshot
-//	public String screenShot() {
-//		String hasil = null;
-//		try {
-//			File destFile = StepDefinition.ambilGambar(driver, direktoriFile + fileCounter + ".png");
-//			hasil = "<a target='_blank' href='" + destFile.getAbsolutePath() + "'>" + "<img src='"
-//					+ destFile.getAbsolutePath() + "'width = 100 height = 100 /></a>";
-//		} catch (IOException e) {
-//			System.out.println("error");
-//		}
-//
-//		return hasil;
-//
-//	}
-//
-//	public static File ambilGambar(WebDriver webdriver, String filepath) throws IOException {
-//		TakesScreenshot ss = ((TakesScreenshot) webdriver);
-//		File srcFile = ss.getScreenshotAs(OutputType.FILE);
-//		File destFile = new File(filepath);
-//		FileUtils.copyFile(srcFile, destFile);
-//
-//		return destFile;
-//	}
+	public String screenShot() {
+		String hasil = null;
+		try {
+			File destFile = StepDefinition.ambilGambar(driver, direktoriFile + fileCounter + ".png");
+			hasil = "<a target='_blank' href='" + destFile.getAbsolutePath() + "'>" + "<img src='"
+					+ destFile.getAbsolutePath() + "'width = 100 height = 100 /></a>";
+		} catch (IOException e) {
+			System.out.println("error");
+		}
 
+		return hasil;
+
+	}
+
+	public static File ambilGambar(WebDriver webdriver, String filepath) throws IOException {
+		TakesScreenshot ss = ((TakesScreenshot) webdriver);
+		File srcFile = ss.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(filepath);
+		FileUtils.copyFile(srcFile, destFile);
+
+		return destFile;
+	}
+
+	
+	
 
 	@Before
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
 		loginPage = new LoginElement();
+		extentTest = reports.startTest(testName[counter++]);
 	}
 	
-//	@AfterStep
-//	public void getResultScreenshot(Scenario scenario) throws Exception {
-//		if (scenario.isFailed()) {
-//			fileCounter++;
-//			extentTest.log(LogStatus.FAIL, screenShot());
-//		} else {
-//			extentTest.log(LogStatus.PASS, "Step pass");
-//		}
-//	}
+	@AfterStep
+	public void getResultScreenshot(Scenario scenario) throws Exception {
+		if (scenario.isFailed()) {
+			fileCounter++;
+			extentTest.log(LogStatus.FAIL, screenShot());
+		}
+	}
 
 	@After
 	public void endTestStep() {
 		reports.endTest(extentTest);
 		reports.flush();
-//		driver.quit();
+		driver.quit();
 	}
 
 	
@@ -120,7 +120,7 @@ public class StepDefinition {
 		public void admin_mengakses_url() {
 			driver = DriverSingleton.getDriver();
 			driver.get(SetUpUtils.URL);
-//			extentTest.log(LogStatus.PASS, "User Admin Mengakses Url "+SetUpUtils.URL);
+			extentTest.log(LogStatus.PASS, "User Admin Mengakses Url "+SetUpUtils.URL);
 		}
 		
 	// User Admin melakukan login
@@ -144,11 +144,8 @@ public class StepDefinition {
 		public void notifikasi() {
 			loginPage.textValidation();
 			assertEquals(loginPage.textValidation(), "Welcome to Tele Kita");
-//			extentTest.log(LogStatus.PASS, "Welcome to Tele Kita");
+			extentTest.log(LogStatus.PASS, "Welcome to Tele Kita");
 		}
-		
-		
-		
 		
 		
 }
