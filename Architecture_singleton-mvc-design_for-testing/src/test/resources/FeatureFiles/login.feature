@@ -8,7 +8,6 @@ Feature: login Test
 		Then User get login validate "Welcome to Tele Kita"
 	
 	Scenario Outline: InValid Login
-		Given User on the login page
 		When User fill the username <username>
 		And User fill the password <password>
 		And User click the login button
