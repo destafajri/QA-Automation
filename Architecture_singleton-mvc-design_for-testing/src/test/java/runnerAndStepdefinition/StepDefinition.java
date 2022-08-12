@@ -128,23 +128,26 @@ public class StepDefinition {
 		public void admin_mengisi_username() throws Exception {
 			Thread.sleep(1000);
 			loginPage.formUsername(config.getUsernameIsLogin());
+			extentTest.log(LogStatus.PASS, "User Admin mengisi username valid");
 		}
 		
 		@When("User Admin mengisi password")
 		public void admin_mengisi_password() {
 			loginPage.formPassword(config.getPassword());
+			extentTest.log(LogStatus.PASS, "User Admin mengisi password valid");
 		}
 		
 		@When("User Admin menekan tombol submit")
 		public void admin_menekan_submit() {
 			loginPage.submitBtn();
+			extentTest.log(LogStatus.PASS, "User Admin menekan tombol submit");
 		}
 		
 		@Then("User Admin mendapatkan notifikasi")
 		public void notifikasi() {
 			loginPage.textValidation();
 			assertEquals(loginPage.textValidation(), "Welcome to Tele Kita");
-			extentTest.log(LogStatus.PASS, "Welcome to Tele Kita");
+			extentTest.log(LogStatus.PASS, " User mendapatkan notifikasi : Welcome to Tele Kita");
 		}
 		
 		
