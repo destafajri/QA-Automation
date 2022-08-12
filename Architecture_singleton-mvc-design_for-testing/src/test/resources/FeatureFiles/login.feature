@@ -1,5 +1,5 @@
-Feature: User Spv
+Feature: User Supervisor
 
 	Scenario: Valid Login
-		Given User Admin Mengakses URL https://sqa.peluangkerjaku.com/tele/
+		Given User Admin Mengakses URL sqa peluang kerjaku
 		

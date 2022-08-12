@@ -108,7 +108,7 @@ public class StepDefinition {
 
 	
 	// User Admin mengakses website
-		@Given("User Admin Mengakses URL https://sqa.peluangkerjaku.com/tele/")
+		@Given("User Admin Mengakses URL sqa peluang kerjaku")
 		public void customer_mengakses_url() {
 			driver = DriverSingleton.getDriver();
 			driver.get(SetUpUtils.URL);

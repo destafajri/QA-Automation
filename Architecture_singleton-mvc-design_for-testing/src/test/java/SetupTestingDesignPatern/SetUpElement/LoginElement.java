@@ -20,20 +20,20 @@ public class LoginElement {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(name = "username")
+	@FindBy(id = "tl_login-1-51550_text")
 	private WebElement input_username_login;
 
-	@FindBy(name = "password")
+	@FindBy(id = "tl_login-1-51551_text")
 	private WebElement input_password_login;
 
-	@FindBy(id = "button")
+	@FindBy(id = "//span[normalize-space()='Sign In']")
 	private WebElement btn_submit_login;
 
-	@FindBy(css = "body > div > div > div > form > div.alert.alert-success.alert-dismissable")
+	@FindBy(xpath = "//*[@id='nikita-form-dialog']/p")
 	private WebElement text_alert_error;
 
-	@FindBy(xpath = "//*[@id=\"content\"]/h1")
-	private WebElement textMenuForm;
+	@FindBy(xpath = "//*[@id='nikita-form-dialog']/p")
+	private WebElement textValidation;
 
 	
 	
@@ -51,8 +51,8 @@ public class LoginElement {
 		return input_password_login.getText();
 	}
 
-	public String textDashboard() {
-		return textMenuForm.getText();
+	public String textValidation() {
+		return textValidation.getText();
 	}
 
 	public String text_alert_error() {
