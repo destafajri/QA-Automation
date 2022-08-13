@@ -109,8 +109,8 @@ The Singleton pattern allows us to stub out the data we’re expecting, and test
 
 For those of you intimately familiar with Apex development, this all might seem eerily similar to the Stub API — and it is! However, this is a fully customizable solution that allows you to stub out everything that you want without worrying about platform limitations.
 
-
-
+            
+          
 
 
 #MVC architecture
