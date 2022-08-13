@@ -23,10 +23,6 @@ In the case of testing, here are some problems we may encounter:
 2. We can’t always test at specific dates or times. What about bugs that happen only on the last day of the month, or 11:59PM GMT?
 3. We can’t (or don’t want to) create specific data, such as custom settings, objects, or permissions.
 
-
-![alt text](https://www.freecodecamp.org/news/content/images/2021/04/MVC3.png)
-
-
 How do we solve these problems with this pattern?
 
 Stub it out!
@@ -35,7 +31,34 @@ The Singleton pattern allows us to stub out the data we’re expecting, and test
 
 For those of you intimately familiar with Apex development, this all might seem eerily similar to the Stub API — and it is! However, this is a fully customizable solution that allows you to stub out everything that you want without worrying about platform limitations.
 
+
+#MVC architecture
+
+MVC is known as an architectural pattern, which embodies three parts Model, View and Controller, or to be more exact it divides the application into three logical parts: the model part, the view and the controller. It was used for desktop graphical user interfaces but nowadays is used in designing mobile apps and web apps.
+
+
+![alt text](https://www.freecodecamp.org/news/content/images/2021/04/MVC3.png)
+
+History
+
+Trygve Reenskaug invented MVC. The first reports on MVC were written when he was visiting a scientist at Xerox Palo Alto Research Laboratory (PARC) in 1978/79. At first, MVC was called “Thing Model View Editor” but rapidly changed it to “Model View Controller”.
+
+The goal of Tygrve was to solve the problem of users controlling a large and complex data set. The practice of MVC has changed over the years. Since the MVC pattern was invented before web browsers, initially was used as an architectural pattern for graphical user interfaces(GUI).
+
+Advantages of MVC
+- MVC architecture will separate the user interface from business logic and business logic
+- Components are reusable.
+- Easy o maintain.
+- Different components of the application in MVC can be independently deployed and maintained.
+- This architecture helpt to test components independently.
+
+Disadvantages of MVC
+- The complexity is high.
+- Not suitable for small applications.
+- The inefficiency of data access in view.
+
   #reference article
   https://www.automatetheplanet.com/category/series/designpatterns/
   https://engineering.salesforce.com/simplify-testing-with-the-singleton-pattern-1a53ba5c2c50/
   https://www.freecodecamp.org/news/singleton-design-pattern-pros-and-cons-e10f98e23d63/
+  https://towardsdatascience.com/everything-you-need-to-know-about-mvc-architecture-3c827930b4c1
