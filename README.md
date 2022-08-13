@@ -2,7 +2,7 @@
 Selenium, TestNG, Maven, Cucumber, and using existing chrome selenium for login solution
 
 
-How To Execute Selenium Scripts On Already Opened Browser.
+#How To Execute Selenium Scripts On Already Opened Browser.
 
 
 Step 1- Start Chrome in debug mode
@@ -108,6 +108,9 @@ Stub it out!
 The Singleton pattern allows us to stub out the data we’re expecting, and test one method at a time (as a good test should). We can return “data” from downstream methods that we haven’t actually inserted, or specific dates and times.
 
 For those of you intimately familiar with Apex development, this all might seem eerily similar to the Stub API — and it is! However, this is a fully customizable solution that allows you to stub out everything that you want without worrying about platform limitations.
+
+
+
 
 
 #MVC architecture
