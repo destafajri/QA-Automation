@@ -9,8 +9,8 @@ Any object that has access to the Singleton’s class header can use the Singlet
 
 
 
-![alt text](https://medium.com/nerd-for-tech/lets-understand-the-design-patterns-and-the-power-of-singleton-design-pattern-aba13bdc32f)
-
+![alt text](https://miro.medium.com/max/1400/1*PU3WlRgmmIBPsW1L_2S2MQ.png)
+https://miro.medium.com/max/1400/1*PU3WlRgmmIBPsW1L_2S2MQ.png
 
 The Singleton Design Pattern can be used in the automation tests to build up easier access to page objects and facades.
 Its usage can speed up the tests writing process dramatically.
@@ -40,6 +40,7 @@ MVC is known as an architectural pattern, which embodies three parts Model, View
 
 
 ![alt text](https://www.freecodecamp.org/news/content/images/2021/04/MVC3.png)
+https://www.freecodecamp.org/
 
 History
 
