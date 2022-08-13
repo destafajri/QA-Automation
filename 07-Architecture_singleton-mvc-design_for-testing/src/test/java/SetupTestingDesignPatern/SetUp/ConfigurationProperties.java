@@ -59,15 +59,26 @@ public class ConfigurationProperties {
 	
 //Configuration Upload
 	
-	@Value("${file}")
-	private String file;
+	@Value("${fileExcel}")
+	private String fileExcel;
 	
-	public String getFile() {
-		return file;
+	public String getFileExcel() {
+		return fileExcel;
 	}
 
-	public void setFile(String file) {
-		this.file = file;
+	public void setFileExcel(String fileExcel) {
+		this.fileExcel = fileExcel;
+	}
+	
+	@Value("${fileDoc}")
+	private String fileDoc;
+	
+	public String getFileDoc() {
+		return fileDoc;
+	}
+
+	public void setFileDoc(String fileDoc) {
+		this.fileDoc = fileDoc;
 	}
 
 }

@@ -5,7 +5,6 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -37,6 +36,7 @@ import SetupTestingDesignPatern.DriverSingleton.DriverSingleton;
 import SetupTestingDesignPatern.SetUp.ConfigurationProperties;
 import SetupTestingDesignPatern.SetUp.SetUpUtils;
 import SetupTestingDesignPatern.SetUpElement.LoginElement;
+import SetupTestingDesignPatern.SetUpElement.UploadElement;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
@@ -55,6 +55,7 @@ public class StepDefinition {
 	ConfigurationProperties config;
 	private static WebDriver driver;
 	private LoginElement loginPage;
+	private UploadElement uploadPage;
 	static String fileExcel;
 	static XSSFRow row;
 
@@ -98,6 +99,7 @@ public class StepDefinition {
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
 		loginPage = new LoginElement();
+		uploadPage = new UploadElement();
 		extentTest = reports.startTest(testName[counter++]);
 	}
 
@@ -106,7 +108,6 @@ public class StepDefinition {
 		if (scenario.isFailed()) {
 			fileCounter++;
 			extentTest.log(LogStatus.FAIL, screenShot());
-			driver.navigate().to(SetUpUtils.URL);
 		}
 	}
 
@@ -130,9 +131,12 @@ public class StepDefinition {
 		extentTest.log(LogStatus.PASS, "User access the URL " + SetUpUtils.URL);
 	}
 
+	
+	
+	
 	// User for login test
 	
-		// negatif test
+		// negative test
 		@When("User login with invalid {string} and {string}")
 		public void admin_mengisi_password(String string, String string2) throws Exception {
 			Thread.sleep(1000);
@@ -155,7 +159,7 @@ public class StepDefinition {
 					"User get allert : Username atau password tidak ditemukan atau akun anda tidak aktif");
 		}
 	
-		// positif test
+		// positive test
 		@When("User login with valid username and password")
 		public void admin_mengisi_username() throws Exception {
 			driver.navigate().refresh();
@@ -172,64 +176,78 @@ public class StepDefinition {
 			extentTest.log(LogStatus.PASS, "User get notification : Welcome to Tele Kita");
 		}
 		
+		
+		
+		
 	//User for upload test
 		
-		//positif test
+		//positive test
 		@When("User click ok to the validation message")
 		public void ok_btn() {
-
+			uploadPage.messageOK();
 			extentTest.log(LogStatus.PASS, "User click ok to the validation message");
 		}
 		
 
 		@When("User move to data table and then upload data table")
 		public void upload_data() {
-
+			uploadPage.dataTable();
+			uploadPage.uploadTable();
 			extentTest.log(LogStatus.PASS, "User move to data table and then upload data table");
 		}
 		
 		
 		@When("User import the excel file from directory")
 		public void import_excel() {
-
+			uploadPage.importData(config.getFileExcel());
 			extentTest.log(LogStatus.PASS, "User import the excel file from directory");
 		}
 		
-		@When("User doesnt import any excel file format {string}")
-		public void doesnt_import_excel_file(String string) {
-
+		//negative
+		@When("User doesnt import any excel file format")
+		public void doesnt_import_excel_file() {
+			uploadPage.importData(config.getFileDoc());
 			extentTest.log(LogStatus.PASS, "User doesnt import any excel file format");
 		}
 		
 		@When("User click upload button and then get new data on the page equals with data from excel file")
 		public void get_data() {
-
+			uploadPage.uploadBtn();
+			uploadPage.dataSize();
 			extentTest.log(LogStatus.PASS, "User click upload button and then get new data on the page equals with data from excel file");
 		}
 		
+		//negative
 		@When("User click upload button and then get alert {string}")
 		public void get_alert(String string) {
-
+			uploadPage.uploadBtn();
+			uploadPage.closeBtn();
 			extentTest.log(LogStatus.PASS, "User click upload button and then get alert "+string);
 		}
 		
 		@When("User save the data and validate the message")
-		public void save_data() {
-
+		public void save_data() throws InterruptedException {
+			Thread.sleep(100);
+			uploadPage.saveBtn();
+			uploadPage.msgSaveValidation();
+			uploadPage.saveValidationBtn();
 			extentTest.log(LogStatus.PASS, "User save the data and validate the message");
 		}
 		
 		@Then("User get validation msg {string}")
-		public void validation(String string) {
-
-//			assertEquals(,);
+		public void validation(String string) throws InterruptedException {
+			Thread.sleep(1000);
+			uploadPage.msgValidation();
+			assertEquals(uploadPage.msgValidation(), string);
 			extentTest.log(LogStatus.PASS, "User get validation msg " + string);
 		}
 		
+		//negative test
 		@Then("User get alert msg {string}")
-		public void alertmsg(String string) {
-
-//			assertEquals(,);
+		public void alertmsg(String string) throws InterruptedException {
+			Thread.sleep(1000);
+			uploadPage.msgValidation();
+			assertEquals(uploadPage.msgValidation(), string);
 			extentTest.log(LogStatus.PASS, "User get alert msg " + string);
 		}
 }

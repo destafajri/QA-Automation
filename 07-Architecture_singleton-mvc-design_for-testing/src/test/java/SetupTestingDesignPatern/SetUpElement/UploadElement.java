@@ -24,7 +24,7 @@ public class UploadElement {
 	//Element
 
 	@FindBy(xpath = "//span[normalize-space()='OK']")
-	private WebElement message;
+	private WebElement messageOK;
 
 	@FindBy(id = "ui-id-11")
 	private WebElement dataTable;
@@ -58,8 +58,8 @@ public class UploadElement {
 
 	
 	//method
-	public void message(){
-		message.click();;
+	public void messageOK(){
+		messageOK.click();;
 	}
 
 	public void dataTable() {
@@ -86,8 +86,8 @@ public class UploadElement {
 		saveBtn.click();
 	}
 	
-	public void msgSaveValidation() {
-		msgSaveValidation.getText();
+	public String msgSaveValidation() {
+		return msgSaveValidation.getText();
 	}
 	
 	public void saveValidationBtn() {
@@ -98,8 +98,8 @@ public class UploadElement {
 		closeBtn.click();
 	}
 	
-	public void msgValidation() {
-		msgValidation.getText();
+	public String msgValidation() {
+		return msgValidation.getText();
 	}
 
 }
