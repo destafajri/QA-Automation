@@ -56,9 +56,12 @@ public class StepDefinition {
 	private static WebDriver driver;
 	private LoginElement loginPage;
 	private UploadElement uploadPage;
+
+	// POI Excel for upload test
 	static String fileExcel;
 	static XSSFRow row;
-
+	int actualData = 0;
+	int excelData = 0;
 
 	String direktoriFile = System.getProperty("user.dir") + "\\test-output\\myfile";
 
@@ -66,16 +69,15 @@ public class StepDefinition {
 	public static ExtentReports reports = new ExtentReports("ReportTest.html");;
 	static int counter = 0;
 	static int fileCounter = 0;
-	static String[] testName = { "Test, Login with wrong password",
-			"Test, Login with wrong username",
-			"Test, Login without fill username and password", "Test Valid Login",
-			"Test, Upload excel file", "Test, Upload non excelfile"};
+	static String[] testName = { "Test, Login with wrong password", "Test, Login with wrong username",
+			"Test, Login without fill username and password", "Test Valid Login", "Test, Upload excel file",
+			"Test, Upload non excelfile" };
 
 	// method screenshot
 	public String screenShot() {
 		String hasil = null;
 		try {
-			File destFile = StepDefinition.ambilGambar(driver, direktoriFile + fileCounter + ".png");
+			File destFile = StepDefinition.takePicture(driver, direktoriFile + fileCounter + ".png");
 			hasil = "<a target='_blank' href='" + destFile.getAbsolutePath() + "'>" + "<img src='"
 					+ destFile.getAbsolutePath() + "'width = 100 height = 100 /></a>";
 		} catch (IOException e) {
@@ -86,7 +88,7 @@ public class StepDefinition {
 
 	}
 
-	public static File ambilGambar(WebDriver webdriver, String filepath) throws IOException {
+	public static File takePicture(WebDriver webdriver, String filepath) throws IOException {
 		TakesScreenshot ss = ((TakesScreenshot) webdriver);
 		File srcFile = ss.getScreenshotAs(OutputType.FILE);
 		File destFile = new File(filepath);
@@ -131,11 +133,8 @@ public class StepDefinition {
 		extentTest.log(LogStatus.PASS, "User access the URL " + SetUpUtils.URL);
 	}
 
-	
-	
-	
 	// User for login test
-	
+
 		// negative test
 		@When("User login with invalid {string} and {string}")
 		public void admin_mengisi_password(String string, String string2) throws Exception {
@@ -175,20 +174,16 @@ public class StepDefinition {
 			assertEquals(loginPage.textValidation(), "Welcome to Tele Kita");
 			extentTest.log(LogStatus.PASS, "User get notification : Welcome to Tele Kita");
 		}
-		
-		
-		
-		
-	//User for upload test
-		
-		//positive test
+
+	// User for upload test
+	
+		// positive test
 		@When("User click ok to the validation message")
 		public void ok_btn() {
 			uploadPage.messageOK();
 			extentTest.log(LogStatus.PASS, "User click ok to the validation message");
 		}
-		
-
+	
 		@When("User move to data table and then upload data table")
 		public void upload_data() {
 			uploadPage.dataTable();
@@ -196,35 +191,75 @@ public class StepDefinition {
 			extentTest.log(LogStatus.PASS, "User move to data table and then upload data table");
 		}
 		
-		
+		//positive
 		@When("User import the excel file from directory")
 		public void import_excel() {
 			uploadPage.importData(config.getFileExcel());
 			extentTest.log(LogStatus.PASS, "User import the excel file from directory");
 		}
-		
-		//negative
+	
+		// negative
 		@When("User doesnt import any excel file format")
 		public void doesnt_import_excel_file() {
 			uploadPage.importData(config.getFileDoc());
 			extentTest.log(LogStatus.PASS, "User doesnt import any excel file format");
 		}
-		
+	
+		//positive
 		@When("User click upload button and then get new data on the page equals with data from excel file")
 		public void get_data() {
 			uploadPage.uploadBtn();
 			uploadPage.dataSize();
-			extentTest.log(LogStatus.PASS, "User click upload button and then get new data on the page equals with data from excel file");
+	
+			// setup variable for assertion
+			this.actualData = uploadPage.dataSize();
+	
+			// setup file excel
+			this.fileExcel = config.getFileExcel();
+	
+			// Excel data (POI)
+			try {
+				FileInputStream file = new FileInputStream(new File(fileExcel));
+				XSSFWorkbook workbook = new XSSFWorkbook(file);
+	
+				XSSFSheet sheet = workbook.getSheetAt(0);
+	
+				Iterator<Row> iterator = sheet.iterator();
+				int counter = -1;
+	
+				while (iterator.hasNext()) {
+					counter += 1;
+					row = (XSSFRow) iterator.next();
+					Iterator<Cell> cellIterator = row.cellIterator();
+	
+					while (cellIterator.hasNext()) {
+						Cell cell = cellIterator.next();
+					}
+				}
+	
+				System.out.println("sum of excel data= " + counter);
+	
+				// setup variable for assertion
+				this.excelData = counter;
+				file.close();
+			} catch (IOException e) {
+				System.out.println(e.getMessage());
+			}
+	
+			// Assertion
+			assertEquals(excelData, actualData);
+			extentTest.log(LogStatus.PASS,
+					"User click upload button and then get new data on the page equals with data from excel file");
 		}
-		
-		//negative
+	
+		// negative
 		@When("User click upload button and then get alert {string}")
 		public void get_alert(String string) {
 			uploadPage.uploadBtn();
 			uploadPage.closeBtn();
-			extentTest.log(LogStatus.PASS, "User click upload button and then get alert "+string);
+			extentTest.log(LogStatus.PASS, "User click upload button and then get alert " + string);
 		}
-		
+	
 		@When("User save the data and validate the message")
 		public void save_data() throws InterruptedException {
 			Thread.sleep(100);
@@ -233,7 +268,7 @@ public class StepDefinition {
 			uploadPage.saveValidationBtn();
 			extentTest.log(LogStatus.PASS, "User save the data and validate the message");
 		}
-		
+	
 		@Then("User get validation msg {string}")
 		public void validation(String string) throws InterruptedException {
 			Thread.sleep(1000);
@@ -241,8 +276,8 @@ public class StepDefinition {
 			assertEquals(uploadPage.msgValidation(), string);
 			extentTest.log(LogStatus.PASS, "User get validation msg " + string);
 		}
-		
-		//negative test
+	
+		// negative test
 		@Then("User get alert msg {string}")
 		public void alertmsg(String string) throws InterruptedException {
 			Thread.sleep(1000);
