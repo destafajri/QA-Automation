@@ -128,9 +128,9 @@ Trygve Reenskaug invented MVC. The first reports on MVC were written when he was
 The goal of Tygrve was to solve the problem of users controlling a large and complex data set. The practice of MVC has changed over the years. Since the MVC pattern was invented before web browsers, initially was used as an architectural pattern for graphical user interfaces(GUI).
 
 Advantages of MVC
-- MVC architecture will separate the user interface from business logic and business logic
+- MVC architecture will separate the user interface from business logic.
 - Components are reusable.
-- Easy o maintain.
+- Easy to maintain.
 - Different components of the application in MVC can be independently deployed and maintained.
 - This architecture helpt to test components independently.
 
