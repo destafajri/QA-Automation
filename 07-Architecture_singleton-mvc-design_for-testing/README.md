@@ -1,4 +1,4 @@
-# SQA-Project
+# Architecture Testing
 Singleton Design Pattern
 The Singleton pattern encapsulates a shared resource within a single unique class instance. This instance arbitrates access to the resource and storage-related state information.
 A class method provides the reference to this instance, so there is no need to pass the reference around. Any object that has access to the Singleton’s class header can use the Singleton.
