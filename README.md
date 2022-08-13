@@ -2,7 +2,9 @@
 Selenium, TestNG, Maven, Cucumber, and using existing chrome selenium for login solution
 
 
-How To Execute Selenium Scripts On Already Opened Browser
+How To Execute Selenium Scripts On Already Opened Browser.
+
+
 Step 1- Start Chrome in debug mode
 
       Navigate to chrome directory using the cd command
