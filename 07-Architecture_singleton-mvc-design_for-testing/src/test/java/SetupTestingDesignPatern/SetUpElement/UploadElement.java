@@ -78,8 +78,8 @@ public class UploadElement {
 		uploadBtn.click();
 	}
 	
-	public void dataSize() {
-		dataSize.size();
+	public int dataSize() {
+		return dataSize.size();
 	}
 	
 	public void saveBtn() {
