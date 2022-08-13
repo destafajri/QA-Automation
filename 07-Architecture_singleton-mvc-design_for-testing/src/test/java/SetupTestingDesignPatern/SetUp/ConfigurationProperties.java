@@ -8,10 +8,20 @@ import org.springframework.stereotype.Component;
 @PropertySource("framework.properties")
 public class ConfigurationProperties {
 	
-
+//configuration browser
 	@Value("${browser}")
 	private String browser;
 	
+	public String getBrowser() {
+		return browser;
+	}
+
+	public void setBrowser(String browser) {
+		this.browser = browser;
+	}
+
+	
+//configuration login
 	@Value("${usernameError}")
 	private String usernameError;
 	
@@ -24,15 +34,6 @@ public class ConfigurationProperties {
 	@Value("${usernameSuccess}")
 	private String usernameSuccess;
 	
-
-	public String getBrowser() {
-		return browser;
-	}
-
-	public void setBrowser(String browser) {
-		this.browser = browser;
-	}
-
 	public String getUsernameError() {
 		return usernameError;
 	}
