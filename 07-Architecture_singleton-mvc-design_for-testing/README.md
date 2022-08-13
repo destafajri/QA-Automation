@@ -1,5 +1,5 @@
 # Architecture Testing
-Singleton Design Pattern
+#Singleton Design Pattern.
 The Singleton pattern encapsulates a shared resource within a single unique class instance.
 This instance arbitrates access to the resource and storage-related state information.
 A class method provides the reference to this instance, so there is no need to pass the reference around.
