@@ -196,5 +196,30 @@ public class StepDefinition {
 
 			extentTest.log(LogStatus.PASS, "User admin menekan tombol ok pada pesan validasi");
 		}
+		
+		@When("User admin berpindah ke tabel data")
+		public void tabel_data() {
 
+			extentTest.log(LogStatus.PASS, "User admin berpindah ke tabel data");
+		}
+		
+		@When("User admin berpindah ke tabel upload Data")
+		public void upload_data() {
+
+			extentTest.log(LogStatus.PASS, "User admin berpindah ke tabel upload data");
+		}
+		
+		
+		
+		@When("User admin melakukan import excel dari directory")
+		public void import_excel() {
+
+			extentTest.log(LogStatus.PASS, "User admin melakukan import excel dari directory");
+		}
+		
+		@When("User admin melakukan tidak melakukan import excel dari directory {string}")
+		public void tidak_melakukan_import_excel(String string) {
+
+			extentTest.log(LogStatus.PASS, "User admin melakukan tidak melakukan import excel dari directory");
+		}
 }
