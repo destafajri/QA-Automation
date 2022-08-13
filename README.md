@@ -73,7 +73,7 @@ Library
 
 # Architecture Testing
 
-#1. Singleton Design Pattern.
+1. Singleton Design Pattern.
 
 
 The Singleton pattern encapsulates a shared resource within a single unique class instance.
@@ -108,7 +108,7 @@ The Singleton pattern allows us to stub out the data we’re expecting, and test
 For those of you intimately familiar with Apex development, this all might seem eerily similar to the Stub API — and it is! However, this is a fully customizable solution that allows you to stub out everything that you want without worrying about platform limitations.
 
 
-#2. MVC architecture
+2. MVC architecture
 
 MVC is known as an architectural pattern, which embodies three parts Model, View and Controller, or to be more exact it divides the application into three logical parts: the model part, the view and the controller. It was used for desktop graphical user interfaces but nowadays is used in designing mobile apps and web apps.
 
