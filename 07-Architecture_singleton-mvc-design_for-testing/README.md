@@ -1,5 +1,7 @@
 # Architecture Testing
 #Singleton Design Pattern.
+
+
 The Singleton pattern encapsulates a shared resource within a single unique class instance.
 This instance arbitrates access to the resource and storage-related state information.
 A class method provides the reference to this instance, so there is no need to pass the reference around.
@@ -7,7 +9,7 @@ Any object that has access to the Singleton’s class header can use the Singlet
 
 
 
-![alt text](https://cdn-media-1.freecodecamp.org/images/1*GOAK3XdRvjrcpX9dq0fUrQ.png)
+![alt text](https://medium.com/nerd-for-tech/lets-understand-the-design-patterns-and-the-power-of-singleton-design-pattern-aba13bdc32f)
 
 
 The Singleton Design Pattern can be used in the automation tests to build up easier access to page objects and facades.
@@ -62,3 +64,4 @@ Disadvantages of MVC
   https://engineering.salesforce.com/simplify-testing-with-the-singleton-pattern-1a53ba5c2c50/
   https://www.freecodecamp.org/news/singleton-design-pattern-pros-and-cons-e10f98e23d63/
   https://towardsdatascience.com/everything-you-need-to-know-about-mvc-architecture-3c827930b4c1
+  https://medium.com/nerd-for-tech/lets-understand-the-design-patterns-and-the-power-of-singleton-design-pattern-aba13bdc32f
