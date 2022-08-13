@@ -58,6 +58,7 @@ public class ConfigurationProperties {
 	}
 	
 //Configuration Upload
+	
 	@Value("${file}")
 	private String file;
 	

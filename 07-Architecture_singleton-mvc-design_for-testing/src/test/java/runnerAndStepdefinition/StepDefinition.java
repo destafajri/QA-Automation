@@ -65,14 +65,10 @@ public class StepDefinition {
 	public static ExtentReports reports = new ExtentReports("ReportTest.html");;
 	static int counter = 0;
 	static int fileCounter = 0;
-	static String[] testName = { "Test Scenario Login dengan pasword kosong",
-			"Test Scenario Login dengan kombinasi Capitalcase",
-			"Test Scenario Login dengan username dan password kosong", "Test Scenario Login Valid",
-			"Test Scenario Upload data excel", "Test Scenario Upload data non excel", "Test Scenario Distribute Valid",
-			"Test Scenario Distribute tidak mengisi agent", "Test Scenario Distribute tidak mengisi jumlah data",
-			"Test Scenario Distribute tidak mengsi agent dan jumlah data", "Test Scenario Edit Data User awal",
-			"Test Scenario Edit Data User akhir", "Test Scenario Edit Data User awal negatif",
-			"Test Scenario Edit Data User akhir negatif", };
+	static String[] testName = { "Test, Login with wrong password",
+			"Test, Login with wrong username",
+			"Test, Login without fill username and password", "Test Valid Login",
+			"Test, Upload excel file", "Test, Upload non excelfile"};
 
 	// method screenshot
 	public String screenShot() {
@@ -127,99 +123,113 @@ public class StepDefinition {
 	}
 
 	// User Admin mengakses website
-	@Given("User Admin Mengakses URL sqa peluang kerjaku")
+	@Given("User access the URL sqa peluang kerjaku")
 	public void admin_mengakses_url() {
 		driver = DriverSingleton.getDriver();
 		driver.get(SetUpUtils.URL);
-		extentTest.log(LogStatus.PASS, "User Admin Mengakses Url " + SetUpUtils.URL);
+		extentTest.log(LogStatus.PASS, "User access the URL " + SetUpUtils.URL);
 	}
 
-	// User Admin melakukan login
+	// User for login test
 	
 		// negatif test
-		@When("User Admin mengisi username {string}")
-		public void admin_mengisi_username2(String string) throws Exception {
-			driver.navigate().refresh();
+		@When("User login with invalid {string} and {string}")
+		public void admin_mengisi_password(String string, String string2) throws Exception {
 			Thread.sleep(1000);
 			loginPage.formUsername(string);
-			extentTest.log(LogStatus.PASS, "User Admin mengisi username invalid");
+			loginPage.formPassword(string2);
+			extentTest.log(LogStatus.PASS, "User login with invalid <username> and <password>");
 		}
 	
-		@When("User Admin mengisi password {string}")
-		public void admin_mengisi_password(String string) throws Exception {
-			Thread.sleep(1000);
-			loginPage.formPassword(string);
-			extentTest.log(LogStatus.PASS, "User Admin mengisi username invalid");
-		}
-	
-		@When("User Admin menekan tombol submit")
+		@When("User click submit")
 		public void admin_menekan_submit() {
 			loginPage.submitBtn();
-			extentTest.log(LogStatus.PASS, "User Admin menekan tombol submit");
+			extentTest.log(LogStatus.PASS, "User click submit");
 		}
 	
-		@Then("User Admin mendapatkan allert")
+		@Then("User get alert")
 		public void alert() {
 			loginPage.text_alert_error();
 			assertEquals(loginPage.text_alert_error(), "Username atau password tidak ditemukan atau akun anda tidak aktif");
 			extentTest.log(LogStatus.PASS,
-					" User mendapatkan alert : Username atau password tidak ditemukan atau akun anda tidak aktif");
+					"User get allert : Username atau password tidak ditemukan atau akun anda tidak aktif");
 		}
 	
 		// positif test
-		@When("User Admin mengisi username")
+		@When("User login with valid username and password")
 		public void admin_mengisi_username() throws Exception {
 			driver.navigate().refresh();
 			Thread.sleep(1000);
 			loginPage.formUsername(config.getUsernameIsLogin());
-			extentTest.log(LogStatus.PASS, "User Admin mengisi username valid");
-		}
-	
-		@When("User Admin mengisi password")
-		public void admin_mengisi_password() {
 			loginPage.formPassword(config.getPassword());
-			extentTest.log(LogStatus.PASS, "User Admin mengisi password valid");
+			extentTest.log(LogStatus.PASS, "User login with valid username and password");
 		}
 	
-		@Then("User Admin mendapatkan notifikasi")
+		@Then("User get notification")
 		public void notifikasi() {
 			loginPage.textValidation();
 			assertEquals(loginPage.textValidation(), "Welcome to Tele Kita");
-			extentTest.log(LogStatus.PASS, " User mendapatkan notifikasi : Welcome to Tele Kita");
+			extentTest.log(LogStatus.PASS, "User get notification : Welcome to Tele Kita");
 		}
 		
-	//User melakukan Upload data
+	//User for upload test
 		
 		//positif test
-		@When("User admin menekan tombol ok pada pesan validasi")
-		public void admin_menekan_tombol_ok() {
+		@When("User click ok to the validation message")
+		public void ok_btn() {
 
-			extentTest.log(LogStatus.PASS, "User admin menekan tombol ok pada pesan validasi");
+			extentTest.log(LogStatus.PASS, "User click ok to the validation message");
 		}
 		
-		@When("User admin berpindah ke tabel data")
-		public void tabel_data() {
 
-			extentTest.log(LogStatus.PASS, "User admin berpindah ke tabel data");
-		}
-		
-		@When("User admin berpindah ke tabel upload Data")
+		@When("User move to data table and then upload data table")
 		public void upload_data() {
 
-			extentTest.log(LogStatus.PASS, "User admin berpindah ke tabel upload data");
+			extentTest.log(LogStatus.PASS, "User move to data table and then upload data table");
 		}
 		
 		
-		
-		@When("User admin melakukan import excel dari directory")
+		@When("User import the excel file from directory")
 		public void import_excel() {
 
-			extentTest.log(LogStatus.PASS, "User admin melakukan import excel dari directory");
+			extentTest.log(LogStatus.PASS, "User import the excel file from directory");
 		}
 		
-		@When("User admin melakukan tidak melakukan import excel dari directory {string}")
-		public void tidak_melakukan_import_excel(String string) {
+		@When("User doesnt import any excel file format {string}")
+		public void doesnt_import_excel_file(String string) {
 
-			extentTest.log(LogStatus.PASS, "User admin melakukan tidak melakukan import excel dari directory");
+			extentTest.log(LogStatus.PASS, "User doesnt import any excel file format");
+		}
+		
+		@When("User click upload button and then get new data on the page equals with data from excel file")
+		public void get_data() {
+
+			extentTest.log(LogStatus.PASS, "User click upload button and then get new data on the page equals with data from excel file");
+		}
+		
+		@When("User click upload button and then get alert {string}")
+		public void get_alert(String string) {
+
+			extentTest.log(LogStatus.PASS, "User click upload button and then get alert "+string);
+		}
+		
+		@When("User save the data and validate the message")
+		public void save_data() {
+
+			extentTest.log(LogStatus.PASS, "User save the data and validate the message");
+		}
+		
+		@Then("User get validation msg {string}")
+		public void validation(String string) {
+
+//			assertEquals(,);
+			extentTest.log(LogStatus.PASS, "User get validation msg " + string);
+		}
+		
+		@Then("User get alert msg {string}")
+		public void alertmsg(String string) {
+
+//			assertEquals(,);
+			extentTest.log(LogStatus.PASS, "User get alert msg " + string);
 		}
 }

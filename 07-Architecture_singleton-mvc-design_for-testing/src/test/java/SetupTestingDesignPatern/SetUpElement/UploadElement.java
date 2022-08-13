@@ -24,82 +24,82 @@ public class UploadElement {
 	//Element
 
 	@FindBy(xpath = "//span[normalize-space()='OK']")
-	private WebElement pesan;
+	private WebElement message;
 
 	@FindBy(id = "ui-id-11")
-	private WebElement tabelData;
+	private WebElement dataTable;
 
 	@FindBy(xpath = "//span[normalize-space()='Upload Data']")
-	private WebElement tabelUpload;
+	private WebElement uploadTable;
 
 	@FindBy(xpath = "//input[@id='tl_upload_new--52043_text']")
 	private WebElement importData;
 
 	@FindBy(xpath = "//span[normalize-space()='Upload']")
-	private WebElement tombolUpload;
+	private WebElement uploadBtn;
 	
 	@FindBy(xpath = "//*[@id='tl_upload_new--52045_table']/tbody/tr")
-	private List<WebElement> jumlahDataTabel;
+	private List<WebElement> dataSize;
 
 	@FindBy(xpath = "//button[@id='52055_query']")
-	private WebElement tombolSimpan;
+	private WebElement saveBtn;
 	
 	@FindBy(xpath = "//div[@id='formtl_upload_newdialog-123']")
-	private WebElement pesanValidasiSimpan;
+	private WebElement msgSaveValidation;
 	
 	@FindBy(xpath = "//span[normalize-space()='SIMPAN']")
-	private WebElement tombolValidasiSimpan;
+	private WebElement saveValidationBtn;
 	
 	@FindBy(xpath = "//button[@title='Close']")
-	private WebElement tombolClose;
+	private WebElement closeBtn;
 	
 	@FindBy(xpath = "//*[@id='nikita-form-dialog']/p")
-	private WebElement pesanValidasi;
+	private WebElement msgValidation;
 
 	
 	//method
-	public void pesan(){
-		pesan.click();;
+	public void message(){
+		message.click();;
 	}
 
-	public void tabelData() {
-		tabelData.click();
+	public void dataTable() {
+		dataTable.click();
 	}
 
-	public void tabelUpload() {
-		tabelUpload.click();
+	public void uploadTable() {
+		uploadTable.click();
 	}
 	
 	public void importData(String excel) {
 		importData.sendKeys(excel);;
 	}
 	
-	public void tombolUpload() {
-		tombolUpload.click();
+	public void uploadBtn() {
+		uploadBtn.click();
 	}
 	
-	public void jumlahDataTabel() {
-		jumlahDataTabel.size();
+	public void dataSize() {
+		dataSize.size();
 	}
 	
-	public void tombolSimpan() {
-		tombolSimpan.click();
+	public void saveBtn() {
+		saveBtn.click();
 	}
 	
-	public void pesanValidasiSimpan() {
-		pesanValidasiSimpan.getText();
+	public void msgSaveValidation() {
+		msgSaveValidation.getText();
 	}
 	
-	public void tombolValidasiSimpan() {
-		tombolValidasiSimpan.click();
+	public void saveValidationBtn() {
+		saveValidationBtn.click();
 	}
 	
-	public void tombolCLose() {
-		tombolClose.click();
+	public void closeBtn() {
+		closeBtn.click();
 	}
 	
-	public void pesanValidasi() {
-		pesanValidasi.getText();
+	public void msgValidation() {
+		msgValidation.getText();
 	}
 
 }

@@ -1,11 +1,10 @@
 Feature: User Supervisor
 
 	Scenario Outline: Invalid Login
-		Given User Admin Mengakses URL sqa peluang kerjaku
-		When User Admin mengisi username <username>
-		And User Admin mengisi password <password>
-		And User Admin menekan tombol submit
-		Then User Admin mendapatkan allert
+		Given User access the URL sqa peluang kerjaku
+		When User login with invalid <username> and <password>
+		And User click submit
+		Then User get alert
 	Examples:
 		|	username		|	password	|
 		| "developer"	| "2"				|
@@ -13,12 +12,7 @@ Feature: User Supervisor
 		| ""					| ""				|
 		
 	Scenario: Valid Login
-		Given User Admin Mengakses URL sqa peluang kerjaku
-		When User Admin mengisi username
-		And User Admin mengisi password
-		And User Admin menekan tombol submit
-		Then User Admin mendapatkan notifikasi		
-
-	
-	
-	
+		Given User access the URL sqa peluang kerjaku
+		When User login with valid username and password
+		And User click submit
+		Then User get notification
