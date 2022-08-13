@@ -56,6 +56,17 @@ public class ConfigurationProperties {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+//Configuration Upload
+	@Value("${file}")
+	private String file;
+	
+	public String getFile() {
+		return file;
+	}
 
+	public void setFile(String file) {
+		this.file = file;
+	}
 
 }

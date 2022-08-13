@@ -9,13 +9,26 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -42,6 +55,9 @@ public class StepDefinition {
 	ConfigurationProperties config;
 	private static WebDriver driver;
 	private LoginElement loginPage;
+	static String fileExcel;
+	static XSSFRow row;
+
 
 	String direktoriFile = System.getProperty("user.dir") + "\\test-output\\myfile";
 
@@ -102,6 +118,7 @@ public class StepDefinition {
 	public void endTestStep() {
 		reports.endTest(extentTest);
 		reports.flush();
+		driver.navigate().to(SetUpUtils.URL);
 	}
 
 	@AfterAll
@@ -118,57 +135,66 @@ public class StepDefinition {
 	}
 
 	// User Admin melakukan login
+	
+		// negatif test
+		@When("User Admin mengisi username {string}")
+		public void admin_mengisi_username2(String string) throws Exception {
+			driver.navigate().refresh();
+			Thread.sleep(1000);
+			loginPage.formUsername(string);
+			extentTest.log(LogStatus.PASS, "User Admin mengisi username invalid");
+		}
+	
+		@When("User Admin mengisi password {string}")
+		public void admin_mengisi_password(String string) throws Exception {
+			Thread.sleep(1000);
+			loginPage.formPassword(string);
+			extentTest.log(LogStatus.PASS, "User Admin mengisi username invalid");
+		}
+	
+		@When("User Admin menekan tombol submit")
+		public void admin_menekan_submit() {
+			loginPage.submitBtn();
+			extentTest.log(LogStatus.PASS, "User Admin menekan tombol submit");
+		}
+	
+		@Then("User Admin mendapatkan allert")
+		public void alert() {
+			loginPage.text_alert_error();
+			assertEquals(loginPage.text_alert_error(), "Username atau password tidak ditemukan atau akun anda tidak aktif");
+			extentTest.log(LogStatus.PASS,
+					" User mendapatkan alert : Username atau password tidak ditemukan atau akun anda tidak aktif");
+		}
+	
+		// positif test
+		@When("User Admin mengisi username")
+		public void admin_mengisi_username() throws Exception {
+			driver.navigate().refresh();
+			Thread.sleep(1000);
+			loginPage.formUsername(config.getUsernameIsLogin());
+			extentTest.log(LogStatus.PASS, "User Admin mengisi username valid");
+		}
+	
+		@When("User Admin mengisi password")
+		public void admin_mengisi_password() {
+			loginPage.formPassword(config.getPassword());
+			extentTest.log(LogStatus.PASS, "User Admin mengisi password valid");
+		}
+	
+		@Then("User Admin mendapatkan notifikasi")
+		public void notifikasi() {
+			loginPage.textValidation();
+			assertEquals(loginPage.textValidation(), "Welcome to Tele Kita");
+			extentTest.log(LogStatus.PASS, " User mendapatkan notifikasi : Welcome to Tele Kita");
+		}
+		
+	//User melakukan Upload data
+		
+		//positif test
+		@When("User admin menekan tombol ok pada pesan validasi")
+		public void admin_menekan_tombol_ok() {
 
-	// negatif test
-	@When("User Admin mengisi username {string}")
-	public void admin_mengisi_username2(String string) throws Exception {
-		driver.navigate().refresh();
-		Thread.sleep(1000);
-		loginPage.formUsername(string);
-		extentTest.log(LogStatus.PASS, "User Admin mengisi username invalid");
-	}
-
-	@When("User Admin mengisi password {string}")
-	public void admin_mengisi_password(String string) throws Exception {
-		Thread.sleep(1000);
-		loginPage.formPassword(string);
-		extentTest.log(LogStatus.PASS, "User Admin mengisi username invalid");
-	}
-
-	@When("User Admin menekan tombol submit")
-	public void admin_menekan_submit() {
-		loginPage.submitBtn();
-		extentTest.log(LogStatus.PASS, "User Admin menekan tombol submit");
-	}
-
-	@Then("User Admin mendapatkan allert")
-	public void alert() {
-		loginPage.text_alert_error();
-		assertEquals(loginPage.text_alert_error(), "Username atau password tidak ditemukan atau akun anda tidak aktif");
-		extentTest.log(LogStatus.PASS,
-				" User mendapatkan alert : Username atau password tidak ditemukan atau akun anda tidak aktif");
-	}
-
-	// positif test
-	@When("User Admin mengisi username")
-	public void admin_mengisi_username() throws Exception {
-		driver.navigate().refresh();
-		Thread.sleep(1000);
-		loginPage.formUsername(config.getUsernameIsLogin());
-		extentTest.log(LogStatus.PASS, "User Admin mengisi username valid");
-	}
-
-	@When("User Admin mengisi password")
-	public void admin_mengisi_password() {
-		loginPage.formPassword(config.getPassword());
-		extentTest.log(LogStatus.PASS, "User Admin mengisi password valid");
-	}
-
-	@Then("User Admin mendapatkan notifikasi")
-	public void notifikasi() {
-		loginPage.textValidation();
-		assertEquals(loginPage.textValidation(), "Welcome to Tele Kita");
-		extentTest.log(LogStatus.PASS, " User mendapatkan notifikasi : Welcome to Tele Kita");
-	}
+			extentTest.log(LogStatus.PASS, "User admin menekan tombol ok pada pesan validasi");
+		}
 
 }
