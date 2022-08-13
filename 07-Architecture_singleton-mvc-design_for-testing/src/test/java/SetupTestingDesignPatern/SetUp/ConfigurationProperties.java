@@ -21,35 +21,18 @@ public class ConfigurationProperties {
 	}
 
 	
-//configuration login
-	@Value("${usernameError}")
-	private String usernameError;
-	
-	@Value("${password}")
-	private String password;
+//configuration login	
 	
 	@Value("${usernameIsLogin}")
 	private String usernameIsLogin;
 	
 	@Value("${usernameSuccess}")
 	private String usernameSuccess;
+
+	@Value("${password}")
+	private String password;
+
 	
-	public String getUsernameError() {
-		return usernameError;
-	}
-
-	public void setUsernameError(String usernameError) {
-		this.usernameError = usernameError;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getUsernameIsLogin() {
 		return usernameIsLogin;
 	}
@@ -65,6 +48,14 @@ public class ConfigurationProperties {
 	public void setUsernameSuccess(String usernameSuccess) {
 		this.usernameSuccess = usernameSuccess;
 	}
-	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 
 }
