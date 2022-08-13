@@ -10,6 +10,20 @@
           <include name="setupDriver"/>
         </methods>
       </class> <!-- com.kitalulus.bookmarkLove -->
+      <class name="com.kitalulus.openApp">
+        <methods>
+          <include name="openAppTest"/>
+          <include name="closeDriver"/>
+          <include name="setupDriver"/>
+        </methods>
+      </class> <!-- com.kitalulus.openApp -->
+      <class name="com.kitalulus.searchVacancy">
+        <methods>
+          <include name="openAppTest"/>
+          <include name="closeDriver"/>
+          <include name="setupDriver"/>
+        </methods>
+      </class> <!-- com.kitalulus.searchVacancy -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
