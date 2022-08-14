@@ -32,8 +32,8 @@ public class LoginElement {
 	
 	
 	//method
-	public void formEmailPhone(String username){
-		input_email_numb_login.sendKeys(username);
+	public void formEmailPhone(String usernumber){
+		input_email_numb_login.sendKeys(usernumber);
 	}
 	
 	public void loginBtn() {
