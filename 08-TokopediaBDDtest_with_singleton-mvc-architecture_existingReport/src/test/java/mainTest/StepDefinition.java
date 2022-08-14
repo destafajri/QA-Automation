@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -45,7 +46,8 @@ public class StepDefinition {
 	public static ExtentReports reports = new ExtentReports("ReportTest.html");;
 	static int counter = 0;
 	static int fileCounter = 0;
-	static String[] testName = { "Test, Login with unregistered number", };
+//	static String[] testName = { "Test, Login with unregistered number", };
+	static ArrayList testName = new ArrayList();
 
 	// method screenshot
 	public String screenShot() {
@@ -74,8 +76,11 @@ public class StepDefinition {
 	@Before
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
+		//login object
 		loginPage = new LoginElement();
-		extentTest = reports.startTest(testName[counter++]);
+		testName.add("Test, Login with unregistered number");
+//		extentTest = reports.startTest(testName[counter++]);
+		extentTest = reports.startTest(testName.toString().replace("[", "").replace("]", ""));
 	}
 
 	@AfterStep
