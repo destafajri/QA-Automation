@@ -98,7 +98,7 @@ public class StepDefinition {
 		driver.quit();
 	}
 
-	// User Admin mengakses website
+	// User access the tokoijo website
 	@Given("User access the URL tokopedia")
 	public void admin_mengakses_url() {
 		driver = DriverSingleton.getDriver();
