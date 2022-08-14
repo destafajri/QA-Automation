@@ -49,8 +49,7 @@ public class StepDefinition {
 	public static ExtentReports reports = new ExtentReports("ReportTest.html");;
 	static int counter = 0;
 	static int fileCounter = 0;
-//	static String[] testName = { "Test, Login with unregistered number", };
-	static ArrayList testName = new ArrayList();
+	static String[] testName =new String[20000];
 
 	// method screenshot
 	public String screenShot() {
@@ -79,16 +78,17 @@ public class StepDefinition {
 	@Before
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
+		testName[0]="Test, Browser access";
+		
 		//login object
 		loginPage = new LoginElement();
-		testName.add("Test, Login with unregistered number");
+		testName[1]="Test, Login with unregistered number";
 		
 		//search product objet
 		searchProduct = new SearchProductElement();
-		testName.add("Test, Search Product");
+		testName[2]="Test, Search Product";
 		
-//		extentTest = reports.startTest(testName[counter++]);
-		extentTest = reports.startTest(testName.toString().replace("[", "").replace("]", ""));
+		extentTest = reports.startTest(testName[counter++]);
 	}
 
 	@AfterStep
