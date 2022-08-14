@@ -34,7 +34,7 @@ public class ScrapProductElement {
 	// method
 	public void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		for (int y = 0; y <= 150; y++) {
+		for (int y = 0; y <= 110; y++) {
 			js.executeScript("window.scrollBy(0," + y + ")");
 		}
 	}
@@ -50,34 +50,36 @@ public class ScrapProductElement {
 	}
 	
 	//name product
-	public List<WebElement> nameProduk() {
+	
+	public List<WebElement> produkNameElem() {
 		return nameAll;
 	}
 
-	public void nameAllStr() {
-		for (WebElement name : nameAll) {
-			name.getText();
-		}
-	}
+//	public List<String> nameProduk() {
+//		for (WebElement name : nameAll) {
+//			name.getText();
+//		}
+//		return null;		
+//	}
 
 	// product price
-	public List<WebElement> priceAll() {
-		return priceAll;
-	}
-
-	public void priceAllStr() {
-		List<WebElement> priceAll = this.priceAll;
-		for (WebElement price : priceAll) {
-			price.getText();
-		}
-	}
-
-	public void priceAllInt() {
-		List<WebElement> priceAll = this.priceAll;
-		for (int x = 0; x < priceAll.size(); x++) {
-			priceAll.get(x).getText();
-			int price = Integer.valueOf(priceAll.get(x).getText().replace(".", "").replace(" ", ""));
-		}
-	}
+//	public List<WebElement> priceAll() {
+//		return priceAll;
+//	}
+//
+//	public void priceAllStr() {
+//		List<WebElement> priceAll = this.priceAll;
+//		for (WebElement price : priceAll) {
+//			price.getText();
+//		}
+//	}
+//
+//	public void priceAllInt() {
+//		List<WebElement> priceAll = this.priceAll;
+//		for (int x = 0; x < priceAll.size(); x++) {
+//			priceAll.get(x).getText();
+//			int price = Integer.valueOf(priceAll.get(x).getText().replace(".", "").replace(" ", ""));
+//		}
+//	}
 
 }
