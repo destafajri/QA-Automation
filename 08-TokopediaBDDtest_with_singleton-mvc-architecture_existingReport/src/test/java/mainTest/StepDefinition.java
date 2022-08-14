@@ -1,6 +1,7 @@
 package mainTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +21,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import SetupTesting.Configuration.AutomationFrameworkConfiguration;
 import SetupTesting.SetupDriverSingleton.DriverSingleton;
 import SetupTesting.SetupElementTesting.LoginElement;
+import SetupTesting.SetupElementTesting.SearchProductElement;
 import SetupTesting.SetupUtilsAndProperties.ConfigurationProperties;
 import SetupTesting.SetupUtilsAndProperties.SetupUrlDriverUtils;
 import io.cucumber.java.After;
@@ -39,6 +41,7 @@ public class StepDefinition {
 	ConfigurationProperties config;
 	private static WebDriver driver;
 	private LoginElement loginPage;
+	private SearchProductElement searchProduct;
 	
 	//extent report
 	String direktoriFile = System.getProperty("user.dir") + "\\test-output\\myfile";
@@ -79,6 +82,11 @@ public class StepDefinition {
 		//login object
 		loginPage = new LoginElement();
 		testName.add("Test, Login with unregistered number");
+		
+		//search product objet
+		searchProduct = new SearchProductElement();
+		testName.add("Test, Search Product");
+		
 //		extentTest = reports.startTest(testName[counter++]);
 		extentTest = reports.startTest(testName.toString().replace("[", "").replace("]", ""));
 	}
@@ -137,6 +145,28 @@ public class StepDefinition {
 			assertEquals(loginPage.text_alert_error(), string);
 			extentTest.log(LogStatus.PASS, "User get allert "+string);
 		}
+		
+		
+	// User for searchProduct
+		@When("User search a product {string}")
+		public void search(String string) throws Exception {
+			Thread.sleep(100);
+			searchProduct.searchProduct(string);
+			extentTest.log(LogStatus.PASS, "User search a product " + string);
+		}
+		
+		@When("User send enter query")
+		public void enter_search() throws Exception {
+			Thread.sleep(100);
+			searchProduct.enterSearch();;
+			extentTest.log(LogStatus.PASS, "User send enter query");
+		}
 
-
+		@Then("User get the product display")
+		public void product() throws Exception {
+			Thread.sleep(1000);
+			searchProduct.searchInfo();
+			assertNotNull(searchProduct.searchInfo());
+			extentTest.log(LogStatus.PASS, "User get the product display "+ searchProduct.searchInfo());
+		}
 }
