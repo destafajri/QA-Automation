@@ -32,7 +32,7 @@ public class ScrapProductElement {
 	// method
 	public void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		for (int y = 0; y <= 80; y++) {
+		for (int y = 0; y <= 150; y++) {
 			js.executeScript("window.scrollBy(0," + y + ")");
 		}
 	}
