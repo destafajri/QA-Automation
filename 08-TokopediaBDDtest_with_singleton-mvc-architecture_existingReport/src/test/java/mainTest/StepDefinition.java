@@ -160,7 +160,6 @@ public class StepDefinition {
 	//method cek product
 		@Then("User see all product {string}")
 		public void productName(String string) throws WebDriverException {
-			cekProductSize.scroll();
 			cekProductSize.produkNameElem();
 			String namePrd = null;
 			for (WebElement name : cekProductSize.produkNameElem()) {
@@ -175,7 +174,6 @@ public class StepDefinition {
 	//method cek price product
 		@Then("User see all product price is not null {int}")
 		public void producPrice(int integer) throws WebDriverException {
-			cekProductSize.scroll();
 			int pricePrd = 0;
 			for (WebElement price : cekProductSize.priceAllElem()) {
 				price.getText();

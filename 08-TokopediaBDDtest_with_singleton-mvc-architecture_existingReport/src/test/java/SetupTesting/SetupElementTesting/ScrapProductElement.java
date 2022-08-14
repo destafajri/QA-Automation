@@ -15,8 +15,7 @@ import SetupTesting.SetupDriverSingleton.DriverSingleton;
 public class ScrapProductElement {
 
 	private WebDriver driver;
-	private int page;
-
+	
 	public ScrapProductElement() {
 		this.driver = DriverSingleton.getDriver();
 		PageFactory.initElements(driver, this);
@@ -24,40 +23,67 @@ public class ScrapProductElement {
 
 	// Element
 	@FindBy(xpath = "//div[@data-testid='spnSRPProdName']")
-	private static List<WebElement> nameAll;
+	private List<WebElement> nameAll;
 
 	@FindBy(xpath = "//div[@data-testid='spnSRPProdPrice']")
-	private static List<WebElement> priceAll;
+	private List<WebElement> priceAll;
 
 	@FindBy(xpath = "//button[@aria-label='Laman berikutnya']")
 	private WebElement next;
 
 	// method
-	public void scroll() {
+	private void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		for (int y = 0; y <= 110; y++) {
 			js.executeScript("window.scrollBy(0," + y + ")");
 		}
 	}
 
-	public void page(int page) {
-		this.page=page;
+	private List<WebElement> pagePrice(int page) {
 		for (int i = 0; i < page; i++) {
-			WebDriverWait wait = new WebDriverWait(driver, 50);
+			this.priceAllElem();
+			WebDriverWait wait = new WebDriverWait(driver, 500);
 			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", next);
 			this.scroll();
 		}
+		return priceAll;
 	}
+	private List<WebElement> pageName(int page) {
+		for (int i = 0; i < page; i++) {
+			this.produkNameElem();
+			WebDriverWait wait = new WebDriverWait(driver, 500);
+			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", next);
+			this.scroll();
+		}
+		return priceAll;
+	}
+	
 	
 	//name product
 	public List<WebElement> produkNameElem() {
+		this.scroll();
+		return nameAll;
+	}
+	
+	public List<WebElement> produkNameElem(int page) {
+		this.scroll();
+		this.pageName(page);
 		return nameAll;
 	}
 
 	// product price
 	public List<WebElement> priceAllElem() {
+		this.scroll();
+		return priceAll;
+	}
+	
+	public List<WebElement> priceAllElem(int page) {
+		this.scroll();
+		this.pagePrice(page);
 		return priceAll;
 	}
 
