@@ -101,7 +101,7 @@ public class StepDefinition {
 		// negative test
 		@When("User move to login page")
 		public void loginpage() throws Exception {
-			Thread.sleep(100);
+			Thread.sleep(1000);
 			loginPage.loginBtn();
 			extentTest.log(LogStatus.PASS, "User move to login page");
 		}
@@ -127,7 +127,7 @@ public class StepDefinition {
 	// User for searchProduct
 		@When("User search a product {string}")
 		public void search(String string) throws Exception {
-			Thread.sleep(100);
+			Thread.sleep(1000);
 			searchProduct.searchProduct(string);
 			extentTest.log(LogStatus.PASS, "User search a product " + string);
 		}
