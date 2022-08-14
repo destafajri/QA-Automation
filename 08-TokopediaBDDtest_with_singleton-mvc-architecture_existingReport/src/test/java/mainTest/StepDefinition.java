@@ -12,6 +12,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -156,14 +158,22 @@ public class StepDefinition {
 		
 	//method cek product
 		@Then("User see all product {string}")
-		public void productName(String string) throws Exception {
-			Thread.sleep(1000);
+		public void productName(String string) throws WebDriverException {
 			cekProductSize.scroll();
-			cekProductSize.page(5);
-			cekProductSize.nameProduk();
-			assertTrue(cekProductSize.nameProduk().contains(string));
-			extentTest.log(LogStatus.PASS, "User get the product display "+ searchProduct.searchInfo());
+			cekProductSize.produkNameElem();
+			String namePrd = null;
+			for (WebElement name : cekProductSize.produkNameElem()) {
+				name.getText();
+				namePrd=name.getText();
+				System.out.println(name.getText());
+			}
+			cekProductSize.page(2);
+			assertTrue(namePrd.toLowerCase().contains(string));
+			extentTest.log(LogStatus.PASS, "User get the product display ");
 		}
+		
+		
+		
 		
 		
 		
