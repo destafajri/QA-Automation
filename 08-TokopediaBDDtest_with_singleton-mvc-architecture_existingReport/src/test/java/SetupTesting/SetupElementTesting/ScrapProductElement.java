@@ -15,6 +15,7 @@ import SetupTesting.SetupDriverSingleton.DriverSingleton;
 public class ScrapProductElement {
 
 	private WebDriver driver;
+	private int page;
 
 	public ScrapProductElement() {
 		this.driver = DriverSingleton.getDriver();
@@ -23,10 +24,10 @@ public class ScrapProductElement {
 
 	// Element
 	@FindBy(xpath = "//div[@data-testid='spnSRPProdName']")
-	private List<WebElement> nameAll;
+	private static List<WebElement> nameAll;
 
 	@FindBy(xpath = "//div[@data-testid='spnSRPProdPrice']")
-	private List<WebElement> priceAll;
+	private static List<WebElement> priceAll;
 
 	@FindBy(xpath = "//button[@aria-label='Laman berikutnya']")
 	private WebElement next;
@@ -40,6 +41,7 @@ public class ScrapProductElement {
 	}
 
 	public void page(int page) {
+		this.page=page;
 		for (int i = 0; i < page; i++) {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
@@ -50,36 +52,13 @@ public class ScrapProductElement {
 	}
 	
 	//name product
-	
 	public List<WebElement> produkNameElem() {
 		return nameAll;
 	}
-
-//	public List<String> nameProduk() {
-//		for (WebElement name : nameAll) {
-//			name.getText();
-//		}
-//		return null;		
-//	}
 
 	// product price
 	public List<WebElement> priceAllElem() {
 		return priceAll;
 	}
-//
-//	public void priceAllStr() {
-//		List<WebElement> priceAll = this.priceAll;
-//		for (WebElement price : priceAll) {
-//			price.getText();
-//		}
-//	}
-//
-//	public void priceAllInt() {
-//		List<WebElement> priceAll = this.priceAll;
-//		for (int x = 0; x < priceAll.size(); x++) {
-//			priceAll.get(x).getText();
-//			int price = Integer.valueOf(priceAll.get(x).getText().replace(".", "").replace(" ", ""));
-//		}
-//	}
 
 }
