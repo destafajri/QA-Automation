@@ -1,6 +1,7 @@
 package mainTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -167,11 +168,24 @@ public class StepDefinition {
 				namePrd=name.getText();
 				System.out.println(name.getText());
 			}
-			cekProductSize.page(2);
 			assertTrue(namePrd.toLowerCase().contains(string));
 			extentTest.log(LogStatus.PASS, "User get the product display ");
 		}
 		
+	//method cek price product
+		@Then("User see all product price is not null {int}")
+		public void producPrice(int integer) throws WebDriverException {
+			cekProductSize.scroll();
+			int pricePrd = 0;
+			for (WebElement price : cekProductSize.priceAllElem()) {
+				price.getText();
+				pricePrd = Integer.valueOf(price.getText().replace("Rp", "").replace(".", "").replace(" ", ""));
+				System.out.println(price.getText());
+			}
+			System.out.println(cekProductSize.priceAllElem().size());
+			assertNotEquals(pricePrd, integer);
+			extentTest.log(LogStatus.PASS, "User see all product price is not null ");
+		}
 		
 		
 		
