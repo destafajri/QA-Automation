@@ -2,6 +2,7 @@ package mainTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -50,31 +51,7 @@ public class StepDefinition {
 	static int counter = 0;
 	static int fileCounter = 0;
 	static String[] testName =new String[20000];
-
-	// method screenshot
-	public String screenShot() {
-		String hasil = null;
-		try {
-			File destFile = StepDefinition.takePicture(driver, direktoriFile + fileCounter + ".png");
-			hasil = "<a target='_blank' href='" + destFile.getAbsolutePath() + "'>" + "<img src='"
-					+ destFile.getAbsolutePath() + "'width = 100 height = 100 /></a>";
-		} catch (IOException e) {
-			System.out.println("error");
-		}
-
-		return hasil;
-
-	}
-
-	public static File takePicture(WebDriver webdriver, String filepath) throws IOException {
-		TakesScreenshot ss = ((TakesScreenshot) webdriver);
-		File srcFile = ss.getScreenshotAs(OutputType.FILE);
-		File destFile = new File(filepath);
-		FileUtils.copyFile(srcFile, destFile);
-
-		return destFile;
-	}
-
+	
 	@Before
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
@@ -82,11 +59,11 @@ public class StepDefinition {
 		
 		//login object
 		loginPage = new LoginElement();
-		testName[1]="Test, Login with unregistered number";
+		testName[1] = "Test, Login with unregistered number";
 		
 		//search product objet
 		searchProduct = new SearchProductElement();
-		testName[2]="Test, Search Product";
+		testName[2] = "Test, Search Product";
 		
 		extentTest = reports.startTest(testName[counter++]);
 	}
@@ -112,7 +89,7 @@ public class StepDefinition {
 	}
 
 	// User access the tokoijo website
-	@Given("User access the URL tokopedia")
+	@Given("User access the URL")
 	public void admin_mengakses_url() {
 		driver = DriverSingleton.getDriver();
 		driver.get(SetupUrlDriverUtils.URL);
@@ -135,7 +112,7 @@ public class StepDefinition {
 			Thread.sleep(1000);
 			loginPage.formEmailPhone(config.getinvalidPhone());
 			loginPage.submitBtn();
-			extentTest.log(LogStatus.PASS, "login with unregistered phone number " +config.getinvalidPhone());
+			extentTest.log(LogStatus.PASS, "User login with unregistered phone number " +config.getinvalidPhone());
 		}
 		
 		@Then("User get allert {string}")
@@ -162,11 +139,39 @@ public class StepDefinition {
 			extentTest.log(LogStatus.PASS, "User send enter query");
 		}
 
-		@Then("User get the product display")
-		public void product() throws Exception {
+		@Then("User get the product display {string}")
+		public void product(String string) throws Exception {
 			Thread.sleep(1000);
 			searchProduct.searchInfo();
-			assertNotNull(searchProduct.searchInfo());
+			assertTrue(searchProduct.searchInfo().contains(string));
 			extentTest.log(LogStatus.PASS, "User get the product display "+ searchProduct.searchInfo());
 		}
+		
+		
+		
+		
+	// method screenshot
+	public String screenShot() {
+		String hasil = null;
+		try {
+			File destFile = StepDefinition.takePicture(driver, direktoriFile + fileCounter + ".png");
+			hasil = "<a target='_blank' href='" + destFile.getAbsolutePath() + "'>" + "<img src='"
+					+ destFile.getAbsolutePath() + "'width = 100 height = 100 /></a>";
+		} catch (IOException e) {
+			System.out.println("error");
+		}
+
+		return hasil;
+
+	}
+
+	public static File takePicture(WebDriver webdriver, String filepath) throws IOException {
+		TakesScreenshot ss = ((TakesScreenshot) webdriver);
+		File srcFile = ss.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(filepath);
+		FileUtils.copyFile(srcFile, destFile);
+
+		return destFile;
+	}
+
 }
