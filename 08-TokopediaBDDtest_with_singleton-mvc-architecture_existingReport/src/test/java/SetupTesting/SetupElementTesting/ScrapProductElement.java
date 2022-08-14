@@ -21,15 +21,14 @@ public class ScrapProductElement {
 
 	// Element
 	@FindBy(xpath = "//div[@data-testid='spnSRPProdName']")
-	private WebElement nameAll;
-	
+	private List<WebElement> nameAll;
+
 	@FindBy(xpath = "//div[@data-testid='spnSRPProdPrice']")
 	private List<WebElement> priceAll;
-	
+
 	@FindBy(xpath = "//button[@aria-label='Laman berikutnya']")
 	private WebElement next;
 
-	
 	// method
 	public void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -37,7 +36,7 @@ public class ScrapProductElement {
 			js.executeScript("window.scrollBy(0," + y + ")");
 		}
 	}
-	
+
 	public void page(int page) {
 		for (int i = 0; i < page; i++) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -46,22 +45,35 @@ public class ScrapProductElement {
 		}
 	}
 	
-	public String priceAllStr() {
-		List<WebElement> priceAll = this.priceAll;
-		for(WebElement price: priceAll) {
-			return price.getText();
-		}
-		return null;
+	//name product
+	public List<WebElement> nameProduk() {
+		return nameAll;
 	}
-	
-	public int priceAllInt() {
+
+	public void nameAllStr() {
+		for (WebElement name : nameAll) {
+			name.getText();
+		}
+	}
+
+	// product price
+	public List<WebElement> priceAll() {
+		return priceAll;
+	}
+
+	public void priceAllStr() {
+		List<WebElement> priceAll = this.priceAll;
+		for (WebElement price : priceAll) {
+			price.getText();
+		}
+	}
+
+	public void priceAllInt() {
 		List<WebElement> priceAll = this.priceAll;
 		for (int x = 0; x < priceAll.size(); x++) {
 			priceAll.get(x).getText();
 			int price = Integer.valueOf(priceAll.get(x).getText().replace(".", "").replace(" ", ""));
-			return price;
 		}
-		return (Integer) null;
 	}
 
 }
