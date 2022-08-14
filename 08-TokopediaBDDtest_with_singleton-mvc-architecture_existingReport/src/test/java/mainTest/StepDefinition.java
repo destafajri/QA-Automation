@@ -22,6 +22,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import SetupTesting.Configuration.AutomationFrameworkConfiguration;
 import SetupTesting.SetupDriverSingleton.DriverSingleton;
 import SetupTesting.SetupElementTesting.LoginElement;
+import SetupTesting.SetupElementTesting.ScrapProductElement;
 import SetupTesting.SetupElementTesting.SearchProductElement;
 import SetupTesting.SetupUtilsAndProperties.ConfigurationProperties;
 import SetupTesting.SetupUtilsAndProperties.SetupUrlDriverUtils;
@@ -43,6 +44,7 @@ public class StepDefinition {
 	private static WebDriver driver;
 	private LoginElement loginPage;
 	private SearchProductElement searchProduct;
+	private ScrapProductElement cekProductSize;
 	
 	//extent report
 	String direktoriFile = System.getProperty("user.dir") + "\\test-output\\myfile";
@@ -64,6 +66,10 @@ public class StepDefinition {
 		//search product objet
 		searchProduct = new SearchProductElement();
 		testName[2] = "Test, Search Product";
+		
+		//search product objet
+		cekProductSize = new ScrapProductElement();
+		testName[3] = "Test, Prouct Size";
 		
 		extentTest = reports.startTest(testName[counter++]);
 	}
@@ -148,9 +154,22 @@ public class StepDefinition {
 		}
 		
 		
+	//method cek product
+		@Then("User see all product {string}")
+		public void productName(String string) throws Exception {
+			Thread.sleep(1000);
+			cekProductSize.scroll();
+			cekProductSize.page(5);
+			cekProductSize.nameProduk();
+			assertTrue(cekProductSize.nameProduk().contains(string));
+			extentTest.log(LogStatus.PASS, "User get the product display "+ searchProduct.searchInfo());
+		}
 		
 		
-	// method screenshot
+		
+	/*
+	 *  method screenshot
+	 */
 	public String screenShot() {
 		String hasil = null;
 		try {
@@ -173,5 +192,6 @@ public class StepDefinition {
 
 		return destFile;
 	}
+	
 
 }
