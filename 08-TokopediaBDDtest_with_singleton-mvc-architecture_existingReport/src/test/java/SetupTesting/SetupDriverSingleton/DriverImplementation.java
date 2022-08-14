@@ -11,7 +11,10 @@ public class DriverImplementation {
 			
 		case SetupUrlDriverUtils.FIREFOX:
 			return new Firefox();
-		
+
+		case SetupUrlDriverUtils.CHROMEEXISTINGBROWSER:
+			return new ChromeExistingBrowser();
+
 		default:
 			return null;
 		}
