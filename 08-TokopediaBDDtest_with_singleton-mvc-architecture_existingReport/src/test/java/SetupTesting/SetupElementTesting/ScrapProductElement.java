@@ -63,9 +63,9 @@ public class ScrapProductElement {
 //	}
 
 	// product price
-//	public List<WebElement> priceAll() {
-//		return priceAll;
-//	}
+	public List<WebElement> priceAllElem() {
+		return priceAll;
+	}
 //
 //	public void priceAllStr() {
 //		List<WebElement> priceAll = this.priceAll;
