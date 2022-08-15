@@ -43,7 +43,7 @@ public class ScrapProductElement {
 	public List<WebElement> produkNameElem(int page) {
 		this.scroll();
 		this.pageName(page);
-		return nameAll;
+		return elemName;
 	}
 
 	// product price
@@ -59,14 +59,35 @@ public class ScrapProductElement {
 	}
 	
 	
-	// method
+// method
+	//scroll
 	private void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		for (int y = 0; y <= 110; y++) {
 			js.executeScript("window.scrollBy(0," + y + ")");
 		}
 	}
-
+	
+	//page name
+	private List<WebElement> pageName(int page) {
+		for (int i = 0; i < page; i++) {
+			this.elemName = nameAll;
+			for (int x = 0; x < elemName.size(); x++) {
+				System.out.println(elemName.get(x).getText());
+				this.elemName = nameAll;
+			}
+			System.out.println("Size of product every page "+elemName.size());
+			System.out.println("Size of product " + elemName.get(i).getSize());
+			WebDriverWait wait = new WebDriverWait(driver, 500);
+			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", next);
+			this.scroll();
+		}
+		return nameAll;
+	}
+	
+	//page price
 	private List<WebElement> pagePrice(int page) {
 		for (int i = 0; i < page; i++) {
 			this.scroll();
@@ -84,24 +105,6 @@ public class ScrapProductElement {
 			this.scroll();
 		}
 		return priceAll;
-	}
-	
-	private List<WebElement> pageName(int page) {
-		for (int i = 0; i < page; i++) {
-			this.elemPrice = nameAll;
-			for (int x = 0; x < elemName.size(); x++) {
-				System.out.println(elemName.get(x).getText());
-				this.elemPrice = priceAll;
-			}
-			System.out.println("Size of product every page "+elemName.size());
-			System.out.println("Size of product " + elemName.get(i).getSize());
-			WebDriverWait wait = new WebDriverWait(driver, 500);
-			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", next);
-			this.scroll();
-		}
-		return nameAll;
 	}
 
 
