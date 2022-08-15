@@ -33,7 +33,32 @@ public class ScrapProductElement {
 
 	@FindBy(xpath = "//button[@aria-label='Laman berikutnya']")
 	private WebElement next;
+	
+	//name product
+	public List<WebElement> produkNameElem() {
+		this.scroll();
+		return nameAll;
+	}
+	
+	public List<WebElement> produkNameElem(int page) {
+		this.scroll();
+		this.pageName(page);
+		return nameAll;
+	}
 
+	// product price
+	public List<WebElement> priceAllElem() {
+		this.scroll();
+		return priceAll;
+	}
+	
+	public List<WebElement> priceAllElem(int page) {
+		this.scroll();
+		this.pagePrice(page);
+		return elemPrice;
+	}
+	
+	
 	// method
 	private void scroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -79,29 +104,6 @@ public class ScrapProductElement {
 		return nameAll;
 	}
 
-	
-	//name product
-	public List<WebElement> produkNameElem() {
-		this.scroll();
-		return nameAll;
-	}
-	
-	public List<WebElement> produkNameElem(int page) {
-		this.scroll();
-		this.pageName(page);
-		return nameAll;
-	}
 
-	// product price
-	public List<WebElement> priceAllElem() {
-		this.scroll();
-		return priceAll;
-	}
-	
-	public List<WebElement> priceAllElem(int page) {
-		this.scroll();
-		this.pagePrice(page);
-		return elemPrice;
-	}
 
 }
