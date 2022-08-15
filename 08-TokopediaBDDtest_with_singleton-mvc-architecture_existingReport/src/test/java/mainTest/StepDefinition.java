@@ -73,6 +73,8 @@ public class StepDefinition {
 		//search product objet
 		cekProductSize = new ScrapProductElement();
 		testName[3] = "Test, Prouct Size";
+		testName[4] = "Test, Prouct Name";
+		testName[5] = "Test, Prouct Price";
 		
 		extentTest = reports.startTest(testName[counter++]);
 	}
@@ -156,6 +158,13 @@ public class StepDefinition {
 			extentTest.log(LogStatus.PASS, "User get the product display "+ searchProduct.searchInfo());
 		}
 		
+	//method cek product size
+		@Then("User see all product display is equals {int}")
+		public void producSize(int integer) throws WebDriverException {
+			cekProductSize.produkNameElem();
+			assertEquals(cekProductSize.produkNameElem().size(), integer);
+			extentTest.log(LogStatus.PASS, "User see all product display is equals "+integer);
+		}
 		
 	//method cek product
 		@Then("User see all product {string}")
@@ -182,7 +191,9 @@ public class StepDefinition {
 			assertNotEquals(pricePrd, integer);
 			extentTest.log(LogStatus.PASS, "User see all product price is not null ");
 		}
-		
+	
+
+	
 	
 		
 		
