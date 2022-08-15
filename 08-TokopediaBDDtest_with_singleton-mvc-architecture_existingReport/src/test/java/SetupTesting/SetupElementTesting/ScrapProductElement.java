@@ -2,6 +2,7 @@ package SetupTesting.SetupElementTesting;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,8 @@ import SetupTesting.SetupDriverSingleton.DriverSingleton;
 public class ScrapProductElement {
 
 	private WebDriver driver;
+	private List<WebElement> elemPrice;
+	private List<WebElement> elemName;
 	
 	public ScrapProductElement() {
 		this.driver = DriverSingleton.getDriver();
@@ -41,18 +44,14 @@ public class ScrapProductElement {
 
 	private List<WebElement> pagePrice(int page) {
 		for (int i = 0; i < page; i++) {
-			this.priceAllElem();
-			WebDriverWait wait = new WebDriverWait(driver, 500);
-			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", next);
 			this.scroll();
-		}
-		return priceAll;
-	}
-	private List<WebElement> pageName(int page) {
-		for (int i = 0; i < page; i++) {
-			this.produkNameElem();
+			this.elemPrice = priceAll;
+			for (int x = 0; x < elemPrice.size(); x++) {
+				System.out.println(elemPrice.get(x).getText());
+				this.elemPrice = priceAll;
+			}
+			System.out.println("Size of product every page "+elemPrice.size());
+			System.out.println("Size of product " + elemPrice.get(i).getSize());
 			WebDriverWait wait = new WebDriverWait(driver, 500);
 			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -62,6 +61,24 @@ public class ScrapProductElement {
 		return priceAll;
 	}
 	
+	private List<WebElement> pageName(int page) {
+		for (int i = 0; i < page; i++) {
+			this.elemPrice = nameAll;
+			for (int x = 0; x < elemName.size(); x++) {
+				System.out.println(elemName.get(x).getText());
+				this.elemPrice = priceAll;
+			}
+			System.out.println("Size of product every page "+elemName.size());
+			System.out.println("Size of product " + elemName.get(i).getSize());
+			WebDriverWait wait = new WebDriverWait(driver, 500);
+			WebElement next = wait.until(ExpectedConditions.visibilityOf(this.next));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", next);
+			this.scroll();
+		}
+		return nameAll;
+	}
+
 	
 	//name product
 	public List<WebElement> produkNameElem() {
@@ -84,7 +101,7 @@ public class ScrapProductElement {
 	public List<WebElement> priceAllElem(int page) {
 		this.scroll();
 		this.pagePrice(page);
-		return priceAll;
+		return elemPrice;
 	}
 
 }
