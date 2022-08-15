@@ -175,17 +175,15 @@ public class StepDefinition {
 		@Then("User see all product price is not null {int}")
 		public void producPrice(int integer) throws WebDriverException {
 			int pricePrd = 0;
-			for (WebElement price : cekProductSize.priceAllElem()) {
+			for (WebElement price : cekProductSize.priceAllElem(1)) {
 				price.getText();
 				pricePrd = Integer.valueOf(price.getText().replace("Rp", "").replace(".", "").replace(" ", ""));
-				System.out.println(price.getText());
 			}
-			System.out.println(cekProductSize.priceAllElem().size());
 			assertNotEquals(pricePrd, integer);
 			extentTest.log(LogStatus.PASS, "User see all product price is not null ");
 		}
 		
-		
+	
 		
 		
 		
