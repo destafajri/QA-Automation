@@ -68,11 +68,11 @@ public class StepDefinition {
 		loginPage = new LoginElement();
 		test.add("Test, Login with unregistered number");
 		
-		//search product objet
+		//search product object
 		searchProduct = new SearchProductElement();
 		test.add("Test, Search Product");
 		
-		//search product objet
+		//search product object
 		cekProductSize = new ScrapProductElement();
 		test.add("Test, Prouct Size");
 		test.add("Test, Prouct Name");
