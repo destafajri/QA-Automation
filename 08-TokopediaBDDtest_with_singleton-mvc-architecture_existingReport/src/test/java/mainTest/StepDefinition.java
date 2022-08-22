@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -55,27 +56,30 @@ public class StepDefinition {
 	public static ExtentReports reports = new ExtentReports("ReportTest.html");;
 	static int counter = 0;
 	static int fileCounter = 0;
-	static String[] testName =new String[20000];
+	static List<String> test = new ArrayList<String>();
+	static String[] testName =new String[test.size()];
 	
 	@Before
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
-		testName[0]="Test, Browser access";
+		test.add("Test, Browser access");
 		
 		//login object
 		loginPage = new LoginElement();
-		testName[1] = "Test, Login with unregistered number";
+		test.add("Test, Login with unregistered number");
 		
 		//search product objet
 		searchProduct = new SearchProductElement();
-		testName[2] = "Test, Search Product";
+		test.add("Test, Search Product");
 		
 		//search product objet
 		cekProductSize = new ScrapProductElement();
-		testName[3] = "Test, Prouct Size";
-		testName[4] = "Test, Prouct Name";
-		testName[5] = "Test, Prouct Price";
+		test.add("Test, Prouct Size");
+		test.add("Test, Prouct Name");
+		test.add("Test, Prouct Price");
 		
+		//Extent Report
+		testName=test.toArray(testName);
 		extentTest = reports.startTest(testName[counter++]);
 	}
 
