@@ -57,8 +57,8 @@ public class StepDefinition {
 	static int counter = 0;
 	static int fileCounter = 0;
 	static List<String> test = new ArrayList<String>();
-	static String[] testName =new String[test.size()];
-	
+	static String[] testName = new String[test.size()];
+
 	@Before
 	public void setUp() {
 		DriverSingleton.getInstance(config.getBrowser());
@@ -79,7 +79,7 @@ public class StepDefinition {
 		test.add("Test, Prouct Price");
 		
 		//Extent Report
-		testName=test.toArray(testName);
+		testName = test.toArray(testName);
 		extentTest = reports.startTest(testName[counter++]);
 	}
 
